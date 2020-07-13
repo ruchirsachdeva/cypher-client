@@ -1,0 +1,26 @@
+#https://www.linkedin.com/pulse/create-angular-app-using-deploy-aws-suite-andr%C3%A9s-casta%C3%B1o/
+version: 0.1
+environment_variables:
+    plaintext:
+        S3_BUCKET: "www.cypher.co.in"
+        BUILD_ENV: "prod"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm install
+            - npm install -g @angular/cli@1.0.4
+    build:
+        commands:
+            - echo Build started on `date`
+            - ng build --env=${BUILD_ENV}
+    post_build:
+         commands:
+            - aws s3 cp dist s3://${S3_BUCKET} --recursive --region ap-south-1
+            - echo Build completed on `date`
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'dist*'
+    discard-paths: yes
+  http://www.cypher.co.in.s3-website.ap-south-1.amazonaws.com
