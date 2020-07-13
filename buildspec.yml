@@ -13,7 +13,7 @@ phases:
     build:
         commands:
             - echo Build started on `date`
-            - ng build --prod --configuration=uat
+            - ng build --${BUILD_ENV}
     post_build:
          commands:
             - aws s3 cp dist s3://${S3_BUCKET} --recursive --region ap-south-1
