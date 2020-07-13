@@ -23,4 +23,3 @@ artifacts:
         - '**/*'
     base-directory: 'dist*'
     discard-paths: yes
-  http://www.cypher.co.in.s3-website.ap-south-1.amazonaws.com
