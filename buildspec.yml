@@ -6,20 +6,22 @@ environment_variables:
         BUILD_ENV: "prod"
 phases:
     install:
+        runtime-versions:
+            nodejs: 10
         commands:
             - echo Installing source NPM dependencies...
-            - npm install
             - npm install -g @angular/cli@8.3.21
+            - npm install
     build:
         commands:
             - echo Build started on `date`
             - ng build --${BUILD_ENV}
     post_build:
          commands:
-            - aws s3 cp dist s3://${S3_BUCKET} --recursive --region ap-south-1
+            - aws s3 cp dist/cypher s3://${S3_BUCKET} --recursive --region ap-south-1
             - echo Build completed on `date`
 artifacts:
     files:
         - '**/*'
-    base-directory: 'dist*'
+    base-directory: 'dist/cypher'
     discard-paths: yes
