@@ -5,7 +5,7 @@
 export const environment = {
   production: false
 };
-export const apiUrl = '//cypher-boot-server.herokuapp.com/api';
+export const apiUrl = 'https://cypher-boot-server.herokuapp.com/api';
 
 /*
  * For easier debugging in development mode, you can import the following file
