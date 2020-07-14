@@ -1,5 +1,5 @@
 #https://www.linkedin.com/pulse/create-angular-app-using-deploy-aws-suite-andr%C3%A9s-casta%C3%B1o/
-version: 0.1
+version: 0.2
 environment_variables:
     plaintext:
         S3_BUCKET: "www.cypher.co.in"
