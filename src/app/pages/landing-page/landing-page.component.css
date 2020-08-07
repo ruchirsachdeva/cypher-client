@@ -1,0 +1,102 @@
+.h100 {
+  height: 100vh;
+}
+
+p,
+h3,
+h2 {
+  font-family: "Nunito", sans-serif;
+}
+
+.black-font {
+  color: #000000;
+}
+
+.white-font {
+  color: #ffffff;
+}
+
+.slide-1 {
+  background: #000000;
+}
+
+.main_logo {
+  width: 15em;
+  height: auto;
+}
+
+.input-group input {
+  background: 0 0 !important;
+  border: none !important;
+  border-bottom: 2px solid #fff !important;
+  color: #ffffff;
+}
+
+.input-group input::placeholder {
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+.input-group button {
+  padding: 0 50px;
+  background: #ffffff;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.input-group input:focus,
+.input-group button:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+/* slide 2 */
+.slide-2 {
+  background: url("/assets/img/img1.jpg") no-repeat bottom;
+  background-size: cover;
+}
+
+.slide-5 h2,
+.slide-4 h2,
+.slide-3 h2,
+.slide-2 h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.black-line {
+  border-bottom: 2px solid #000000;
+}
+
+.slide-5 h3,
+.slide-4 h3,
+.slide-3 h3,
+.slide-2 h3 {
+  width: 50%;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+/* slide 3 */
+.slide-3 {
+  background: url("/assets/img/img2.jpg") no-repeat bottom;
+  background-size: cover;
+}
+
+.white-line {
+  border-bottom: 2px solid #fff;
+}
+
+/* slide 4 */
+.slide-4 {
+  background: url("/assets/img/img3.jpg") no-repeat bottom;
+  background-size: cover;
+}
+
+/* slide 5 */
+.slide-5 {
+  background: #000000;
+}
+
+.slide-5 h3 {
+  width: 70%;
+}
