@@ -1,5 +1,44 @@
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 0 8px;
+}
+
+.carousel-indicators {
+  bottom: 15%;
+}
+
 .h100 {
   height: 100vh;
+}
+
+.relative {
+  position: relative;
+}
+
+.logo-section {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-left: -7.5em;
+}
+
+.main_logo {
+  width: 15em;
+  height: auto;
+}
+
+.text-section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  left: 50%;
+  margin-left: -35%;
+  bottom: 25%;
 }
 
 p,
@@ -8,6 +47,13 @@ h2 {
   font-family: "Nunito", sans-serif;
 }
 
+.large-title {
+  font-size: 2.5em;
+}
+
+.large-title span {
+  display: block;
+}
 .black-font {
   color: #000000;
 }
@@ -20,16 +66,12 @@ h2 {
   background: #000000;
 }
 
-.main_logo {
-  width: 15em;
-  height: auto;
-}
-
 .input-group input {
   background: 0 0 !important;
   border: none !important;
   border-bottom: 2px solid #fff !important;
   color: #ffffff;
+  border-radius: 0;
 }
 
 .input-group input::placeholder {
@@ -42,6 +84,7 @@ h2 {
   background: #ffffff;
   font-size: 1.2em;
   color: #000000;
+  border-radius: 0;
 }
 
 .input-group input:focus,
@@ -51,7 +94,9 @@ h2 {
 }
 /* slide 2 */
 .slide-2 {
-  background: url("/assets/img/img1.jpg") no-repeat bottom;
+  background: no-repeat bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+    url("/assets/img/img1.jpg");
   background-size: cover;
 }
 
@@ -59,37 +104,62 @@ h2 {
 .slide-4 h2,
 .slide-3 h2,
 .slide-2 h2 {
+  font-family: sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .black-line {
-  border-bottom: 2px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
-.slide-5 h3,
+.slide-2 h3,
 .slide-4 h3,
 .slide-3 h3,
-.slide-2 h3 {
-  width: 50%;
-  font-size: 1.5em;
-  font-weight: 500;
+.slide-5 h3 {
+  width: 80%;
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+.slide-2 span {
+  display: block;
+}
+
+.slide-2 .text-section,
+.slide-3 .text-section,
+.slide-4 .text-section {
+  bottom: unset;
+  top: 48%;
 }
 
 /* slide 3 */
 .slide-3 {
-  background: url("/assets/img/img2.jpg") no-repeat bottom;
+  background: no-repeat bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/img/img5.jpg");
   background-size: cover;
 }
 
+.slide-3 span {
+  display: block;
+}
+
 .white-line {
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 /* slide 4 */
 .slide-4 {
-  background: url("/assets/img/img3.jpg") no-repeat bottom;
+  background: no-repeat bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/img/aj1.jpg");
   background-size: cover;
+}
+
+.slide-4 span {
+  display: block;
 }
 
 /* slide 5 */
@@ -98,5 +168,29 @@ h2 {
 }
 
 .slide-5 h3 {
-  width: 70%;
+  width: 90%;
+}
+
+.slide-5 span {
+  display: block;
+}
+
+.slide-5 .footer {
+  position: relative;
+  font-size: 1.75rem;
+  bottom: 20px;
+}
+
+.slide-5 .text-section {
+  bottom: unset;
+  top: 40%;
+}
+
+.social-icon-section {
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
 }
