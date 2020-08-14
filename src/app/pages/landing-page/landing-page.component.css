@@ -1,3 +1,14 @@
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 0 8px;
+}
+
+.carousel-indicators {
+  bottom: 15%;
+}
+
 .h100 {
   height: 100vh;
 }
@@ -27,7 +38,7 @@
   width: 70%;
   left: 50%;
   margin-left: -35%;
-  bottom: 20%;
+  bottom: 25%;
 }
 
 p,
@@ -83,7 +94,9 @@ h2 {
 }
 /* slide 2 */
 .slide-2 {
-  background: url("/assets/img/img1.jpg") no-repeat bottom;
+  background: no-repeat bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+    url("/assets/img/img1.jpg");
   background-size: cover;
 }
 
@@ -116,15 +129,16 @@ h2 {
 
 .slide-2 .text-section,
 .slide-3 .text-section,
-.slide-4 .text-section,
-.slide-5 .text-section {
+.slide-4 .text-section {
   bottom: unset;
-  top: 50%;
+  top: 48%;
 }
 
 /* slide 3 */
 .slide-3 {
-  background: url("/assets/img/img2.jpg") no-repeat bottom;
+  background: no-repeat bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/img/img5.jpg");
   background-size: cover;
 }
 
@@ -138,7 +152,9 @@ h2 {
 
 /* slide 4 */
 .slide-4 {
-  background: url("/assets/img/img3.jpg") no-repeat bottom;
+  background: no-repeat bottom;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/img/aj1.jpg");
   background-size: cover;
 }
 
@@ -157,4 +173,24 @@ h2 {
 
 .slide-5 span {
   display: block;
+}
+
+.slide-5 .footer {
+  position: relative;
+  font-size: 1.75rem;
+  bottom: 20px;
+}
+
+.slide-5 .text-section {
+  bottom: unset;
+  top: 40%;
+}
+
+.social-icon-section {
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
 }
