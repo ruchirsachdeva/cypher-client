@@ -152,39 +152,45 @@
     <!-- Fifth slide -->
     <div class="carousel-item slide-5 h100">
       <div class="container text-center white-font">
-        <div
-          class="d-flex flex-column align-items-center justify-content-center h100"
-        >
-          <img
-            src="/assets/img/cypher_logo_white.png"
-            alt="logo"
-            class="main_logo"
-          />
-          <div class="row align-items-center" style="width: 60%;">
-            <div class="white-line col-md-3"></div>
-            <h2 class="col-md-6">{{ title5 }}</h2>
-            <div class="white-line col-md-3"></div>
+        <div class="relative h100">
+          <div class="logo-section">
+            <img
+              src="/assets/img/cypher_logo_white.png"
+              alt="logo"
+              class="main_logo"
+            />
           </div>
+          <div class="text-section">
+            <div class="row align-items-center mb-3" style="width: 90%;">
+              <div class="white-line col-md-3"></div>
+              <h2 class="col-md-6">{{ title5 }}</h2>
+              <div class="white-line col-md-3"></div>
+            </div>
 
-          <h3>{{ subTitle5 }}</h3>
+            <h3>
+              <span>{{ subTitle5_1 }}</span>
+              <span>{{ subTitle5_2 }}</span>
+              <span>{{ subTitle5_3 }}</span>
+              <span>{{ subTitle5_4 }}</span>
+            </h3>
 
-          <div class="row justify-content-center" style="width: 40%;">
-            <div class="input-group mb-5 mt-5">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="Email"
-                aria-label="Email"
-              />
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">
-                  Send
-                </button>
+            <div class="row justify-content-center" style="width: 60%;">
+              <div class="input-group mb-5 mt-5">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  aria-label="Email"
+                />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">
+                    Sign Up
+                  </button>
+                </div>
               </div>
             </div>
+            <h3>{{ footerText5 }}</h3>
           </div>
-
-          <h3>{{ footerText5 }}</h3>
         </div>
       </div>
     </div>

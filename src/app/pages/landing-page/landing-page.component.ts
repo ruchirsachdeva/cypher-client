@@ -36,10 +36,15 @@ export class LandingPageComponent implements OnInit {
   subTitle4_3: string = "interests into income. Now, anyone can be a reseller.";
 
   title5: string = "Our story";
-  subTitle5: string = `‘Cypher’ is an informal gathering of rappers, beatboxers, break dancers and
-  spectators from the ‘street’, who come together to jam. Akin to the name,
-  we at Cypher strive to organise the hype culture by providing seamless
-  shared experiences between the ever-so-passionate sneakerheads in India.`;
+  subTitle5_1: string =
+    "‘Cypher’ is an informal gathering of rappers, beatboxers, break dancers and";
+  subTitle5_2: string =
+    "spectators from the ‘street’, who come together to jam. Akin to the name,";
+  subTitle5_3: string =
+    "we at Cypher strive to organise the hype culture by providing seamless";
+  subTitle5_4: string =
+    "shared experiences between the ever-so-passionate sneakerheads in India.";
+
   footerText5: string = "Sign up to enter free raffle";
 
   constructor() {}

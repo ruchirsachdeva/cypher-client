@@ -102,7 +102,8 @@ h2 {
 
 .slide-2 h3,
 .slide-4 h3,
-.slide-3 h3 {
+.slide-3 h3,
+.slide-5 h3 {
   width: 80%;
   font-size: 1.3em;
   font-weight: 600;
@@ -115,15 +116,10 @@ h2 {
 
 .slide-2 .text-section,
 .slide-3 .text-section,
-.slide-4 .text-section {
+.slide-4 .text-section,
+.slide-5 .text-section {
   bottom: unset;
   top: 50%;
-}
-
-.slide-5 h3 {
-  width: 50%;
-  font-size: 1.5em;
-  font-weight: 500;
 }
 
 /* slide 3 */
@@ -156,5 +152,9 @@ h2 {
 }
 
 .slide-5 h3 {
-  width: 70%;
+  width: 90%;
+}
+
+.slide-5 span {
+  display: block;
 }
