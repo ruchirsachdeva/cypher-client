@@ -21,6 +21,7 @@ import {ProductListComponent} from './pages/product-list/product.list.component'
 import {UserDetailComponent} from './pages/user-edit/user-detail.component';
 import {ProductEditComponent} from './pages/product-edit/product-edit.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { LandingPageMobileComponent } from './pages/landing-page-mobile/landing-page-mobile.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +39,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
         UserDetailComponent,
         ProductEditComponent,
         LandingPageComponent,
+        LandingPageMobileComponent,
 
     ],
     imports: [
