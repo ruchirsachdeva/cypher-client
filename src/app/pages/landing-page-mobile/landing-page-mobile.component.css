@@ -92,8 +92,11 @@
   background: #000000;
 }
 
-.slide-1m .social-icon-section {
-  bottom: -10%;
+.social-icon-section {
+  width: 100%;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
 }
 
 .large-title {
@@ -312,13 +315,7 @@
   font-size: 1em !important;
 }
 
-.social-icon-section {
-  width: 100%;
-  position: absolute;
-  bottom: 10%;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
+.slide-5m .social-icon-section {
 }
 
 @media only screen and (max-width: 380px) {
@@ -330,7 +327,7 @@
   }
 
   .slide-2m h3 {
-    font-size: 0.7em;
+    font-size: 0.68em;
   }
 
   .slide-2m h2 {
@@ -338,7 +335,7 @@
   }
 
   .slide-3m h3 {
-    font-size: 0.7em;
+    font-size: 0.68em;
   }
 
   .slide-4m h2 {
@@ -346,7 +343,7 @@
   }
 
   .slide-4m h3 {
-    font-size: 0.7em;
+    font-size: 0.68em;
   }
 
   .slide-5m h3 {
