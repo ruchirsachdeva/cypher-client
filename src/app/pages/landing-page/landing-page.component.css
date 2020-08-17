@@ -194,3 +194,74 @@ h2 {
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 1040px) {
+  .text-section {
+    width: 85%;
+    margin-left: -42.5%;
+  }
+
+  .large-title {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .slide-5 h2,
+  .slide-4 h2,
+  .slide-3 h2,
+  .slide-2 h2 {
+    padding: 0;
+    font-size: 1.7em;
+  }
+  .slide-2 h3,
+  .slide-4 h3,
+  .slide-3 h3,
+  .slide-5 h3 {
+    width: 100%;
+    font-size: 1.2em;
+  }
+
+  .slide-5 h3 {
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  .logo-section {
+    top: 15%;
+  }
+  .carousel-indicators {
+    bottom: 10%;
+  }
+  .large-title {
+    font-size: 2em;
+  }
+
+  .slide-1 .input-group {
+    margin-bottom: 1em !important;
+  }
+
+  .slide-5 .text-section {
+    top: 30%;
+  }
+
+  .social-icon-section {
+    bottom: 5%;
+  }
+
+  .slide-5 h2,
+  .slide-4 h2,
+  .slide-3 h2,
+  .slide-2 h2 {
+    font-size: 1.7em;
+    padding: 0;
+  }
+
+  .slide-2 h3,
+  .slide-4 h3,
+  .slide-3 h3,
+  .slide-5 h3 {
+    font-size: 1.2em;
+    width: 100%;
+  }
+}
