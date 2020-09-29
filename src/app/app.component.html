@@ -1,3 +1,36 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <app-navigation></app-navigation> -->
-<router-outlet></router-outlet>
+<nb-layout>
+
+    <!--Layout Header // No header for Home Page-->
+    <nb-layout-header *ngIf="router.url !== '/home'" style="font-weight:bolder;font-size:xx-large;" fixed>
+        <div class="col-md-10">Cypher</div>
+
+        <div class="col-md-2">
+          <nb-actions style="float: right;" size="medium">
+            <nb-action (click)="search()" icon="search"></nb-action>
+            <nb-action (click)="search()" icon="shopping-bag"></nb-action>
+          </nb-actions>
+        </div>
+    </nb-layout-header>
+    
+    <!--Sidebar // No Sidebar for Home Page-->
+    <nb-sidebar *ngIf="router.url !== '/home'">
+        <div class="col-md-12">
+            <nb-menu [items]="items" autoCollapse="true">
+            </nb-menu>
+        </div>
+    </nb-sidebar>
+
+    <!--All Routes/Pages are rendered here-->
+    <nb-layout-column style="padding: 0%;">
+
+     <router-outlet></router-outlet>
+
+    </nb-layout-column>
+
+    <!--Footer // No Footer for Home Page-->
+    <nb-layout-footer fixed style="position: fixed; left: 0; bottom: 0;width: 100%;" *ngIf="router.url !== '/home'">
+        <div style="font-weight: bolder;">
+            Footer SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE
+        </div>
+    </nb-layout-footer>
+</nb-layout>

@@ -6,7 +6,6 @@ import {NavigationComponent} from './parts/navigation/navigation.component';
 import {CardComponent} from './pages/card/card.component';
 import {PaginationComponent} from './parts/pagination/pagination.component';
 import {AppRoutingModule} from './app-routing.module';
-import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {DetailComponent} from './pages/product-detail/detail.component';
 import {FormsModule} from '@angular/forms';
@@ -22,6 +21,10 @@ import {UserDetailComponent} from './pages/user-edit/user-detail.component';
 import {ProductEditComponent} from './pages/product-edit/product-edit.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LandingPageMobileComponent } from './pages/landing-page-mobile/landing-page-mobile.component';
+import { NbLayoutModule, NbThemeModule, NbMenuModule, NbSearchModule, NbCardModule, NbSidebarModule,
+    NbActionsModule, NbIconModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { LoginModule } from './pages/login/login.module';
 
 @NgModule({
     declarations: [
@@ -29,7 +32,6 @@ import { LandingPageMobileComponent } from './pages/landing-page-mobile/landing-
         NavigationComponent,
         CardComponent,
         PaginationComponent,
-        LoginComponent,
         SignupComponent,
         DetailComponent,
         CartComponent,
@@ -47,6 +49,17 @@ import { LandingPageMobileComponent } from './pages/landing-page-mobile/landing-
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
+        NbLayoutModule,
+        NbSearchModule,
+        NbCardModule,
+        NbActionsModule,
+        NbEvaIconsModule,
+        NbIconModule,
+        NbThemeModule.forRoot({ name: 'default' }),
+        NbMenuModule.forRoot(),
+        NbSidebarModule.forRoot(),
+       
+        LoginModule
 
     ],
     providers: [CookieService,
