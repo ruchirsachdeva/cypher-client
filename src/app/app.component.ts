@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
 import { Router }  from "@angular/router";
+import { NbSidebarService } from '@nebular/theme';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,9 +9,10 @@ import { Router }  from "@angular/router";
 })
 export class AppComponent {
 
-  constructor(public router: Router){}
+  constructor(public router: Router, private sidebarService: NbSidebarService){}
   
   title = 'Cypher';
+
   items: NbMenuItem[] = [
     {
       title: 'Sell',
@@ -60,5 +62,4 @@ export class AppComponent {
   search(){
     console.log("Searched");
   }
-
 }

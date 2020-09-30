@@ -6,7 +6,6 @@ import {NavigationComponent} from './parts/navigation/navigation.component';
 import {CardComponent} from './pages/card/card.component';
 import {PaginationComponent} from './parts/pagination/pagination.component';
 import {AppRoutingModule} from './app-routing.module';
-import {SignupComponent} from './pages/signup/signup.component';
 import {DetailComponent} from './pages/product-detail/detail.component';
 import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -22,9 +21,10 @@ import {ProductEditComponent} from './pages/product-edit/product-edit.component'
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LandingPageMobileComponent } from './pages/landing-page-mobile/landing-page-mobile.component';
 import { NbLayoutModule, NbThemeModule, NbMenuModule, NbSearchModule, NbCardModule, NbSidebarModule,
-    NbActionsModule, NbIconModule } from '@nebular/theme';
+    NbActionsModule, NbIconModule, NbInputModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LoginModule } from './pages/login/login.module';
+import { SignupModule } from './pages/signup/signup.module';
 
 @NgModule({
     declarations: [
@@ -32,7 +32,6 @@ import { LoginModule } from './pages/login/login.module';
         NavigationComponent,
         CardComponent,
         PaginationComponent,
-        SignupComponent,
         DetailComponent,
         CartComponent,
         OrderComponent,
@@ -50,6 +49,7 @@ import { LoginModule } from './pages/login/login.module';
         FormsModule,
         HttpClientModule,
         NbLayoutModule,
+        NbInputModule,
         NbSearchModule,
         NbCardModule,
         NbActionsModule,
@@ -59,7 +59,8 @@ import { LoginModule } from './pages/login/login.module';
         NbMenuModule.forRoot(),
         NbSidebarModule.forRoot(),
        
-        LoginModule
+        LoginModule,
+        SignupModule
 
     ],
     providers: [CookieService,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router, RouterModule} from '@angular/router'
 
 @Component({
   selector: "app-landing-page",
@@ -47,7 +48,14 @@ export class LandingPageComponent implements OnInit {
 
   footerText5: string = "Sign up to enter free raffle";
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+  
+  goToLogin(){
+    this.router.navigate(['/register']);
+  }
+
 }
+
+

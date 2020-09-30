@@ -2,6 +2,8 @@
 
     <!--Layout Header // No header for Home Page-->
     <nb-layout-header *ngIf="router.url !== '/home'" style="font-weight:bolder;font-size:xx-large;" fixed>
+        
+        <button *ngIf="currState!==expanded" nbButton status="danger"><nb-icon icon="menu-outline"></nb-icon></button>
         <div class="col-md-10">Cypher</div>
 
         <div class="col-md-2">
@@ -12,8 +14,8 @@
         </div>
     </nb-layout-header>
     
-    <!--Sidebar // No Sidebar for Home Page-->
-    <nb-sidebar *ngIf="router.url !== '/home'">
+    <!--Sidebar // No Sidebar for Home Page-->   
+    <nb-sidebar responsive *ngIf="router.url !== '/home'">
         <div class="col-md-12">
             <nb-menu [items]="items" autoCollapse="true">
             </nb-menu>
@@ -22,9 +24,7 @@
 
     <!--All Routes/Pages are rendered here-->
     <nb-layout-column style="padding: 0%;">
-
      <router-outlet></router-outlet>
-
     </nb-layout-column>
 
     <!--Footer // No Footer for Home Page-->

@@ -2,19 +2,27 @@ import {Role} from "../enum/Role";
 
 export class User {
 
-    email: string;
+    firstName: string;
 
-    password: string;
-
-    name: string;
-
-    phone: string;
+    lastName: string;
 
     address: string;
+
+    state: string;
+
+    zip: string;
+
+    country : string;
+
+    email: string;
+
+    phone: string;
 
     active: boolean;
 
     role: string;
+
+    password: string;
 
     constructor(){
         this.active = true;

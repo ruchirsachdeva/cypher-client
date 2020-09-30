@@ -14,12 +14,12 @@ import { NbLayoutModule ,
     NbInputModule
       } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login.component';
+import { SignupComponent } from './signup.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -38,4 +38,4 @@ import { LoginComponent } from './login.component';
     HttpClientModule
   ],
 })
-export class LoginModule { }
+export class SignupModule { }

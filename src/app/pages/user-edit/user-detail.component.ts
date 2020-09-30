@@ -35,7 +35,7 @@ export class UserDetailComponent implements OnInit {
 
     onSubmit() {
         this.userService.update(this.user).subscribe(u => {
-            this.userService.nameTerms.next(u.name);
+            this.userService.nameTerms.next(u.firstName);
             let url = '/';
             if (this.user.role != Role.Customer) {
                 url = '/seller';
