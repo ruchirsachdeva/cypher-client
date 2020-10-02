@@ -1,0 +1,22 @@
+div.footer{
+    height: 15%;
+    background-color: black; 
+    position: fixed;
+    left: 0; 
+    bottom: 0;
+    width: 100%;  
+}
+
+div.col-2{
+    font-weight: bold;
+    padding-left:4%;
+    padding-right: 3%;
+}
+
+div.header{
+    margin-left: 2%;
+}
+
+div.row{
+    font-family: Helvetica;
+}

@@ -13,10 +13,8 @@ import {CartComponent} from './pages/cart/cart.component';
 import {CookieService} from "ngx-cookie-service";
 import {ErrorInterceptor} from "./_interceptors/error-interceptor.service";
 import {JwtInterceptor} from "./_interceptors/jwt-interceptor.service";
-import {OrderComponent} from './pages/order/order.component';
 import {OrderDetailComponent} from './pages/order-detail/order-detail.component';
 import {ProductListComponent} from './pages/product-list/product.list.component';
-import {UserDetailComponent} from './pages/user-edit/user-detail.component';
 import {ProductEditComponent} from './pages/product-edit/product-edit.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LandingPageMobileComponent } from './pages/landing-page-mobile/landing-page-mobile.component';
@@ -25,6 +23,9 @@ import { NbLayoutModule, NbThemeModule, NbMenuModule, NbSearchModule, NbCardModu
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LoginModule } from './pages/login/login.module';
 import { SignupModule } from './pages/signup/signup.module';
+import { UserDetailModule } from './pages/user-edit/user-detail.module';
+import { OrderModule } from './pages/order/order.module';
+import { PortifolioModule } from './pages/portifolio/portifolio.module';
 
 @NgModule({
     declarations: [
@@ -34,10 +35,8 @@ import { SignupModule } from './pages/signup/signup.module';
         PaginationComponent,
         DetailComponent,
         CartComponent,
-        OrderComponent,
         OrderDetailComponent,
         ProductListComponent,
-        UserDetailComponent,
         ProductEditComponent,
         LandingPageComponent,
         LandingPageMobileComponent,
@@ -60,7 +59,10 @@ import { SignupModule } from './pages/signup/signup.module';
         NbSidebarModule.forRoot(),
        
         LoginModule,
-        SignupModule
+        SignupModule,
+        UserDetailModule,
+        OrderModule,
+        PortifolioModule
 
     ],
     providers: [CookieService,

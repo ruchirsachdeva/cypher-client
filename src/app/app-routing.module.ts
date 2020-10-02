@@ -13,6 +13,8 @@ import { UserDetailComponent } from "./pages/user-edit/user-detail.component";
 import { ProductEditComponent } from "./pages/product-edit/product-edit.component";
 import { LandingPageComponent } from "./pages/landing-page/landing-page.component";
 import { Role } from "./enum/Role";
+import { SurveyComponent } from "./pages/survey/survey.component";
+import { PortifolioComponent } from "./pages/portifolio/portifolio.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -26,12 +28,17 @@ const routes: Routes = [
   { path: "register", component: SignupComponent },
   { path: "cart", component: CartComponent },
   { path: "success", component: SignupComponent },
+  { path: "survey", component: SurveyComponent },
+  { path: "portifolio", component: PortifolioComponent },
   {
-    path: "order/:id",
-    component: OrderDetailComponent,
-    canActivate: [AuthGuard],
+   path: "order/:id",
+   component: OrderDetailComponent,
+   // canActivate: [AuthGuard],
   },
-  { path: "order", component: OrderComponent, canActivate: [AuthGuard] },
+  { path: "order",
+    component: OrderComponent,
+    // canActivate: [AuthGuard] 
+  },
   { path: "seller", redirectTo: "seller/product", pathMatch: "full" },
   {
     path: "seller/product",
@@ -42,7 +49,7 @@ const routes: Routes = [
   {
     path: "profile",
     component: UserDetailComponent,
-    canActivate: [AuthGuard],
+   // canActivate: [AuthGuard],
   },
   {
     path: "seller/product/:id/edit",

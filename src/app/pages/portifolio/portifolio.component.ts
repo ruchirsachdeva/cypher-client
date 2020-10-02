@@ -10,11 +10,11 @@ import {ActivatedRoute} from "@angular/router";
 import {Role} from "../../enum/Role";
 
 @Component({
-    selector: 'app-order',
-    templateUrl: './order.component.html',
-    styleUrls: ['./order.component.css']
+    selector: 'app-portifolio',
+    templateUrl: './portifolio.component.html',
+    styleUrls: ['./portifolio.component.css']
 })
-export class OrderComponent implements OnInit, OnDestroy {
+export class PortifolioComponent implements OnInit, OnDestroy {
 
     page: any;
     OrderStatus = OrderStatus;

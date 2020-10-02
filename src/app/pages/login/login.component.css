@@ -1,3 +1,16 @@
 .invalid-feedback{
     display: block;
 }
+
+.col-12{
+    font-weight: bold;
+}
+
+.form-control-sm{
+    font-weight: 700;
+}
+
+label{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}

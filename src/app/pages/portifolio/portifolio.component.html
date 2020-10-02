@@ -1,3 +1,4 @@
+<div style="padding-bottom: 8%;">
 
 <h6><b>Dashboard</b></h6>
 <br>
@@ -6,10 +7,10 @@
 
 <ul class="nav">
   <li class="nav-item">
-    <a  class="nav-link active" href="#">My Profile</a>
+    <a  class="nav-link" href="#">My Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Portifolio</a>
+    <a class="nav-link active" href="#">Portifolio</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Orders</a>
@@ -23,61 +24,73 @@
 
       <div class="col-6" style="padding-bottom: 10%;">
         <br>
-          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+         <!-- <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
-              <!--First Name-->
+              SKU
               <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" class="form-control form-control-sm" name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel" required />
-                <div *ngIf="firstName.invalid && (firstName.dirty ||firstName.touched)" class="invalid-feedback">
-                  <div *ngIf="firstName.errors.required">First Name is required</div>
+                <label for="sneakerName">SKU</label>
+                <select placeholder="Start Typing" class="form-control form-control-sm">
+                  <option value="null"></option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+                <div *ngIf="sneakerName.invalid && (sneakerName.dirty ||sneakerName.touched)" class="invalid-feedback">
+                  <div *ngIf="sneakerName.errors.required">First Name is required</div>
                 </div>
             </div>
-            <!--Last Name-->
+            Sneaker Name
             <div class="form-group">
-                <label for="lastName">Last Name</label>
+                <label for="lastName">Sneaker Name</label>
                 <input type="text" class="form-control form-control-sm" name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" required />
                 <div *ngIf="lastName.invalid && (lastName.dirty ||lastName.touched)" class="invalid-feedback">
                   <div *ngIf="lastName.errors.required">Last Name is required</div>
                 </div>
             </div>
-            <!--Address-->
+            Brand
             <div class="form-group">
-              <label for="address">Address</label>
+              <label for="address">Brand</label>
               <input type="text" class="form-control form-control-sm" name="address" [(ngModel)]="user.address" #address="ngModel" required />
               <div *ngIf="address.invalid && (address.dirty ||address.touched)" class="invalid-feedback">
                 <div *ngIf="address.errors.required">Address is required</div>
               </div>
             </div>
 
-            <!--State-->
+            Colorway
             <div class="form-group">
-              <label for="state">State</label>
+              <label for="state">Colorway</label>
               <input type="text" class="form-control form-control-sm" name="state" [(ngModel)]="user.state" #state="ngModel" required />
               <div *ngIf="state.invalid && (state.dirty ||state.touched)" class="invalid-feedback">
                 <div *ngIf="state.errors.required">State is required</div>
               </div>
             </div>
 
-            <!--Zip Code-->
+            Size (UK)
             <div class="form-group">
-              <label for="zip">Zip Code</label>
+              <label for="zip">Size (UK)</label>
               <input type="number" class="form-control form-control-sm" name="zip" [(ngModel)]="user.zip" #zip="ngModel" required />
               <div *ngIf="zip.invalid && (zip.dirty ||zip.touched)" class="invalid-feedback">
                 <div *ngIf="zip.errors.required">Zip Code is required</div>
               </div>
             </div>
 
-            <!--Country-->
+            Country
             <div class="form-group">
               <label for="country">Country</label>
-              <input type="text" class="form-control form-control-sm" name="country" [(ngModel)]="user.country" #country="ngModel" required />
+                <select placeholder="Start Typing" class="form-control form-control-sm">
+                  <option value="null"></option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
               <div *ngIf="country.invalid && (country.dirty ||country.touched)" class="invalid-feedback">
                 <div *ngIf="country.errors.required">Country is required</div>
               </div>
             </div>
 
-            <!--Email-->
+            Email
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control form-control-sm" name="email" [(ngModel)]="user.email" #email="ngModel" required email />
@@ -87,7 +100,7 @@
                 </div>
             </div>
 
-            <!--Phone-->
+            Phone
             <div class="form-group">
               <label for="phone">Phone</label>
               <input type="number" class="form-control form-control-sm" name="phone" [(ngModel)]="user.phone" #phone="ngModel" required />
@@ -101,10 +114,56 @@
                   [disabled]="!f.form.valid"
                   style="background-color: black; color: white;" type="submit" class="btn btn-primary">SAVE CHANGES</button>
               </div>
-          </form>
+          </form>-->
       </div>
 
   </div>
 
 </div>
+
+
+
+<div class="row">
+    <div class="column">
+      <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
+      <div class="card-body"    >
+        Order Date: 3 Sept 2020<br>
+        Order Id: CY01567<br>
+        Total: Rs 67,345.00
+      </div>
+      <button nbButton fullWidth
+    style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
+    </div>
+    <div class="column">
+        <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
+        <div class="card-body"    >
+          Order Date: 3 Sept 2020<br>
+          Order Id: CY01567<br>
+          Total: Rs 67,345.00
+        </div>
+        <button nbButton fullWidth
+      style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
+      </div>
+      <div class="column">
+        <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
+        <div class="card-body"    >
+          Order Date: 3 Sept 2020<br>
+          Order Id: CY01567<br>
+          Total: Rs 67,345.00
+        </div>
+        <button nbButton fullWidth
+      style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
+      </div>
+      <div class="column">
+        <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
+        <div class="card-body"    >
+          Order Date: 3 Sept 2020<br>
+          Order Id: CY01567<br>
+          Total: Rs 67,345.00
+        </div>
+        <button nbButton fullWidth
+      style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
+      </div>
+
+</div><br>
 

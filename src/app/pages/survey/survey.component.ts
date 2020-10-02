@@ -5,11 +5,11 @@ import {Role} from "../../enum/Role";
 import { User } from '../../models/User';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
+    selector: 'app-survey',
+    templateUrl: './survey.component.html',
+    styleUrls: ['./survey.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SurveyComponent implements OnInit {
 
     isInvalid: boolean;
     isLogout: boolean;
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit() {
-        this.submitted = true;
+       /* this.submitted = true;
         this.userService.login(this.model).subscribe(
             user => {
                 if (user) {
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
                 }
 
             }
-        );
+        );*/
     }
 
     fillLoginFields(u, p) {
