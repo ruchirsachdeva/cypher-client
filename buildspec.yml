@@ -7,10 +7,10 @@ environment_variables:
 phases:
     install:
         runtime-versions:
-            nodejs: 10
+            nodejs: 12
         commands:
             - echo Installing source NPM dependencies...
-            - npm install -g @angular/cli@8.3.21
+            - npm install -g @angular/cli@9.1.12
             - npm install
     build:
         commands:
