@@ -7,13 +7,13 @@
 
 <ul class="nav">
   <li class="nav-item">
-    <a  class="nav-link" href="#">My Profile</a>
+    <a  class="nav-link" (click)="goToProfile()">My Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Portifolio</a>
+    <a class="nav-link" (click)="goToPortifolio()">Portifolio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="#">Orders</a>
+    <a class="nav-link active">Orders</a>
   </li>
 </ul><br>
 
@@ -29,8 +29,8 @@
         Order Id: CY01567<br>
         Total: Rs 67,345.00
       </div>
-      <button nbButton fullWidth
-    style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
+      <button nbButton fullWidth (click)="goToOrderDetails()"
+    style="background-color: black; color: white;" type="button" class="btn btn-primary">DETAILS</button>   
     </div>
     <div class="column">
         <div class="card"><img class="card-img-top" src="./SHOE.jpg" alt="Card image cap">  </div>
@@ -73,8 +73,8 @@
         Order Id: CY01567<br>
         Total: Rs 67,345.00
       </div>
-      <button nbButton fullWidth
-    style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
+      <button nbButton fullWidth (click)="goToOrderDetails()"
+    style="background-color: black; color: white;" type="submit" class="btn btn-primary" >DETAILS</button>   
     </div>
     <div class="column">
         <div class="card"><img class="card-img-top" src="./SHOE.jpg" alt="Card image cap">  </div>

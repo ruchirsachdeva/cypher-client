@@ -1,28 +1,54 @@
-<h1 align="center" class="display-4 mb-5">Order Detail</h1>
-<table class="table table-striped text-center">
-    <thead>
-    <tr>
-        <th scope="col">Photo</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Subtotal</th>
+<div style="padding-bottom: 15%;">
+<h6><b>Dashboard</b></h6>
+<br>
+<h4 style="font-weight: bolder;">SHRAVAN SUD</h4>
+<hr style="border: 1px solid;">
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of (order$ | async)?.products">
-        <th class="align-middle" scope="row">
-            <a routerLink="/seller/product/{{item.productId}}/edit"><img height="100px" src="{{item.productIcon}}"
-                                                                         alt="{{item.productName}}"></a>
-        </th>
-        <td class="align-middle"><a routerLink="/seller/product/{{item.productId}}/edit">{{item.productName}}</a></td>
-        <td class="align-middle">{{item.productDescription}}</td>
-        <td class="align-middle">{{item.productPrice | currency}}</td>
-        <td class="align-middle">{{item.count}}</td>
-        <td class="align-middle">{{(item.productPrice * item.count | currency)}}</td>
-    </tr>
-    </tbody>
-</table>
-<h5 style="display: inline" class="float-right">Total: {{(order$ | async)?.orderAmount | currency}}</h5>
+<ul class="nav">
+  <li class="nav-item">
+    <a  class="nav-link" (click)="goToProfile()">My Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="goToPortifolio()">Portifolio</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active">Orders</a>
+  </li>
+</ul><br>
+
+<div class="row">
+    <div class="column">
+        <div class="card" style="height: 400px;"><img class="card-img-top" src="./SHOE.jpg" alt="Card image cap">  </div>
+    </div>
+    <div>
+        <h5>AIR JORDAN 4 RETRO</h5>
+        <h5>"DOERMBENCHER"</h5><br>
+
+        <table style="width: 100%; font-weight: bold; font-family: Arial, Helvetica, sans-serif;" id="sampleLoginTable">
+            <tr>
+              <td>Order Number</td>
+              <td>CY02356</td>
+            </tr>
+            <tr>
+              <td>Size</td>
+              <td>UK9</td>
+            </tr>
+            <tr>
+              <td>SKU</td>
+              <td>XXXXX</td>
+            </tr>
+            <tr>
+              <td>Shipping Address&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</td>
+              <td>182, Hauz Khas Apartments, New Delhi</td>
+            </tr>
+        </table>
+
+        <br><br><br><br><br>
+        <div style="font-weight: bold;">
+            <a style="color: black;text-decoration: none;" href="#services">Buy Again</a><br>
+            <a style="color: black;text-decoration: none;" href="#clients">Return</a><br>
+            <a style="color: black;text-decoration: none;" href="#contact">Share</a><br>
+            <a style="color: black;text-decoration: none;" href="#contact">Feedback</a><br>    
+        </div>
+    </div>
+ </div>

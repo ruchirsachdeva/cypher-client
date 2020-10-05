@@ -2,6 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     color: #b5b1b0 ;
+    cursor: pointer;
 }
 
 .nav-link.active{
@@ -10,4 +11,16 @@
 
 label{
     font-weight: bolder;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }

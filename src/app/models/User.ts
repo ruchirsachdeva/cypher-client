@@ -23,6 +23,7 @@ export class User {
     role: string;
 
     password: string;
+    confirmPassword : string;
 
     constructor(){
         this.active = true;

@@ -1,32 +1,43 @@
 <div style="padding-bottom: 8%;">
-
-<h6><b>Dashboard</b></h6>
-<br>
-<h4 style="font-weight: bolder;">SHRAVAN SUD</h4>
-<hr style="border: 1px solid;">
+  <h6><b>Dashboard</b></h6>
+  <br>
+  <h4 style="font-weight: bolder;">SHRAVAN SUD</h4>
+  <hr style="border: 1px solid;">
 
 <ul class="nav">
   <li class="nav-item">
-    <a  class="nav-link" href="#">My Profile</a>
+    <a  class="nav-link" (click)="goToProfile()">My Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="#">Portifolio</a>
+    <a class="nav-link active">Portifolio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Orders</a>
+    <a class="nav-link" (click)="goToOrders()">Orders</a>
   </li>
 </ul><br>
 
+<div *ngIf="!addNew">
+  <div class="row">
+    <div class="column">
+      <div class="card"><img class="card-img-top" src="..." alt="Card image cap"></div><br>
+      <button nbButton fullWidth (click)="showAddNewForm()"
+        style="background-color: black; color: white;" type="button" class="btn btn-primary">ADD NEW
+      </button>
+    </div>
 
-<div class="col-12">
+</div><br>
+</div>
+
+<!--Add New Product Form-->
+<div class="col-12" *ngIf="addNew">
 
   <div class="row">
 
       <div class="col-6" style="padding-bottom: 10%;">
         <br>
-         <!-- <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
-              SKU
+              <!-- SKU -->
               <div class="form-group">
                 <label for="sneakerName">SKU</label>
                 <select placeholder="Start Typing" class="form-control form-control-sm">
@@ -40,7 +51,7 @@
                   <div *ngIf="sneakerName.errors.required">First Name is required</div>
                 </div>
             </div>
-            Sneaker Name
+            <!-- Sneaker Name -->
             <div class="form-group">
                 <label for="lastName">Sneaker Name</label>
                 <input type="text" class="form-control form-control-sm" name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" required />
@@ -48,7 +59,7 @@
                   <div *ngIf="lastName.errors.required">Last Name is required</div>
                 </div>
             </div>
-            Brand
+            <!-- Brand -->
             <div class="form-group">
               <label for="address">Brand</label>
               <input type="text" class="form-control form-control-sm" name="address" [(ngModel)]="user.address" #address="ngModel" required />
@@ -57,7 +68,7 @@
               </div>
             </div>
 
-            Colorway
+            <!-- Colorway -->
             <div class="form-group">
               <label for="state">Colorway</label>
               <input type="text" class="form-control form-control-sm" name="state" [(ngModel)]="user.state" #state="ngModel" required />
@@ -66,7 +77,7 @@
               </div>
             </div>
 
-            Size (UK)
+            <!-- Size (UK) -->
             <div class="form-group">
               <label for="zip">Size (UK)</label>
               <input type="number" class="form-control form-control-sm" name="zip" [(ngModel)]="user.zip" #zip="ngModel" required />
@@ -75,9 +86,9 @@
               </div>
             </div>
 
-            Country
+            <!-- Box Condition -->
             <div class="form-group">
-              <label for="country">Country</label>
+              <label for="boxCondition">Box Condition</label>
                 <select placeholder="Start Typing" class="form-control form-control-sm">
                   <option value="null"></option>
                   <option>1</option>
@@ -90,20 +101,54 @@
               </div>
             </div>
 
-            Email
+            <!-- Add Images -->
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control form-control-sm" name="email" [(ngModel)]="user.email" #email="ngModel" required email />
+                <label for="addImages">Add Images</label>
+                // Note: Add image input
                 <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="invalid-feedback">
                     <div *ngIf="email.errors.required">Email is required</div>
                     <div *ngIf="email.errors.email">Email must be a valid email address</div>
                 </div>
             </div>
 
-            Phone
+            <!--Phone-->
             <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="number" class="form-control form-control-sm" name="phone" [(ngModel)]="user.phone" #phone="ngModel" required />
+              <label>Price</label><br>
+              <a style="font-weight: 500; font-family: Arial, Helvetica, sans-serif; font-size: medium;">Suggested: Rs. 200038 (only available for sku in our system</a>
+              <select placeholder="Start Typing" class="form-control form-control-sm">
+                <option value="null"></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select><br>
+              <table style="width: 50%; font-weight: 500; font-family: Arial, Helvetica, sans-serif; font-size: medium;" id="sampleLoginTable">
+                <tr>
+                  <td>List Price</td>
+                  <td>Rs. -2.6</td>
+                </tr>
+                <tr>
+                  <td>Tansaction Fee (10%)</td>
+                  <td>Rs. -2.6</td>
+                </tr>
+                <tr>
+                  <td>Service Tax (1.8%)</td>
+                  <td>Rs. -0.47</td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>Rs. 120</td>
+                </tr>
+                <tr>
+                  <td>Authentication Fee</td>
+                  <td>Waived</td>
+                </tr>
+                <tr>
+                  <td>You will recieve</td>
+                  <td>Rs. 0</td>
+                </tr>
+            </table>
+
               <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)" class="invalid-feedback">
                 <div *ngIf="phone.errors.required">Phone is required</div>
               </div>
@@ -112,58 +157,13 @@
               <div class="form-group">
                   <button nbButton fullWidth
                   [disabled]="!f.form.valid"
-                  style="background-color: black; color: white;" type="submit" class="btn btn-primary">SAVE CHANGES</button>
+                  style="background-color: black; color: white;" type="submit" class="btn btn-primary">CONFIRM</button>
               </div>
-          </form>-->
+          </form>
       </div>
 
   </div>
 
 </div>
 
-
-
-<div class="row">
-    <div class="column">
-      <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
-      <div class="card-body"    >
-        Order Date: 3 Sept 2020<br>
-        Order Id: CY01567<br>
-        Total: Rs 67,345.00
-      </div>
-      <button nbButton fullWidth
-    style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
-    </div>
-    <div class="column">
-        <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
-        <div class="card-body"    >
-          Order Date: 3 Sept 2020<br>
-          Order Id: CY01567<br>
-          Total: Rs 67,345.00
-        </div>
-        <button nbButton fullWidth
-      style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
-      </div>
-      <div class="column">
-        <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
-        <div class="card-body"    >
-          Order Date: 3 Sept 2020<br>
-          Order Id: CY01567<br>
-          Total: Rs 67,345.00
-        </div>
-        <button nbButton fullWidth
-      style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
-      </div>
-      <div class="column">
-        <div class="card"><img class="card-img-top" src="..." alt="Card image cap">  </div>
-        <div class="card-body"    >
-          Order Date: 3 Sept 2020<br>
-          Order Id: CY01567<br>
-          Total: Rs 67,345.00
-        </div>
-        <button nbButton fullWidth
-      style="background-color: black; color: white;" type="submit" class="btn btn-primary">DETAILS</button>   
-      </div>
-
-</div><br>
 

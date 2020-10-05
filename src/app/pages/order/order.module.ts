@@ -15,6 +15,7 @@ import { NbLayoutModule ,
       } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderComponent } from './order.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { OrderComponent } from './order.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     NbLayoutModule,
     NbCardModule,

@@ -15,6 +15,7 @@ import { NbLayoutModule ,
       } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailComponent } from './user-detail.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { UserDetailComponent } from './user-detail.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     NbLayoutModule,
     NbCardModule,

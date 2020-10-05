@@ -14,11 +14,22 @@
 
 
 <div  class="col-2"  *ngIf="router.url !== '/home'">
-    <a style="color: black;text-decoration: none;" href="#services">Sell</a><br>
-    <a style="color: black;text-decoration: none;" href="#clients">How it works</a><br>
-    <a style="color: black;text-decoration: none;" href="#contact">Categories</a><br>
-    <a style="color: black;text-decoration: none;" href="#contact">Feed</a><br>    
-    <a style="color: black; text-decoration: none;" [routerLink]="['/login']">Account</a><br>
+    <a style="padding: 16px; color: black;text-decoration: none;">Sell</a><br>
+    <a style="padding: 16px; color: black;text-decoration: none;" [routerLink]="['/login']">Log In</a><br>
+    <a style="padding: 16px; color: black;text-decoration: none;">How it works</a><br>
+    <a style="padding: 16px; color: black;text-decoration: none;">Categories</a><br>
+    <a style="padding: 16px; color: black;text-decoration: none;">Feed</a><br> 
+    <div class="dropdown">
+        <a class="dropbtn">Account</a>
+        <div class="dropdown-content">
+          <a [routerLink]="['/profile']">Profile</a>
+          <a >Wishlist</a>
+          <a [routerLink]="['/portifolio']">Portifolio</a>
+          <a >Seller Dashboard</a>
+          <a [routerLink]="['/order']">Orders</a>
+          <a >Settings</a>
+        </div>
+    </div>
 </div>
 <div class="col-10" *ngIf="router.url !== '/home'">
     <router-outlet></router-outlet>
@@ -26,13 +37,7 @@
 </div>
 
 
-    
-
-
-
-
 <div class="footer">
-
 
 <footer *ngIf="router.url !== '/home'" class="py-4 text-white">
       
@@ -47,56 +52,13 @@
                 <button type="button" style="font-weight: 550; width:10%; background-color: white; color: black;">SIGN UP</button>
             </div>
         </div>
-        <div style="margin-left: 17%; ">FAQs | Terms | Privacy | Support | Contact Us</div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div >
+            <i class="fa fa-instagram"></i> &nbsp;
+            <i class="fa fa-facebook-official"></i> 
+             <span style="padding-left: 14%;">FAQs | Terms | Privacy | Support | Contact Us</span>
+            </div>
     </div>
     
   </footer>
 </div>
-<!--<nb-layout>-->
-
-    <!--Layout Header // No header for Home Page-->
-  <!--<nb-layout-header *ngIf="router.url !== '/home'" style="font-weight:bolder;font-size:xx-large;" fixed>
-        
-        <button *ngIf="currState!==expanded" nbButton status="danger"><nb-icon icon="menu-outline"></nb-icon></button>
-        <div class="col-md-10">Cypher</div>
-
-        <div class="col-md-2">
-          <nb-actions style="float: right;" size="medium">
-            <nb-action (click)="search()" icon="search"></nb-action>
-            <nb-action (click)="search()" icon="shopping-bag"></nb-action>
-          </nb-actions>
-        </div>
-    </nb-layout-header>-->
-    
-    <!--Sidebar // No Sidebar for Home Page-->   
- <!--   <nb-sidebar responsive *ngIf="router.url !== '/home'">
-        <div class="col-md-12">
-            <nb-menu [items]="items" autoCollapse="true">
-            </nb-menu>
-        </div>
-    </nb-sidebar>-->
-   
-    <!--All Routes/Pages are rendered here-->
-   <!-- <nb-layout-column style="padding: 0%;">
-     
-
-     <footer *ngIf="router.url !== '/home'" style=" height: 15%; background-color: black;  position: fixed; left: 0; bottom: 0;width: 100%;"  class="py-4 text-white">
-      
-        <div class="col-md-12">
-
-            <div style="margin-left: 19%; ">
-                SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE.
-            </div>   
-            <div style="margin-left: 19%;">
-                <div class="form-inline">
-                    <input type="text" style="width: 50%;" placeholder="Email"/>&nbsp;&nbsp;
-                    <button type="button" style="font-weight: 550; width:10%; background-color: white; color: black;">SIGN UP</button>
-                </div>
-            </div>
-            <div style="margin-left: 19%; ">FAQs | Terms | Privacy | Support | Contact Us</div>
-        </div>
-        
-      </footer>
-      
-    </nb-layout-column>
-</nb-layout>-->

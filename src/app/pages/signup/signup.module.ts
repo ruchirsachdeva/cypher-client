@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ValidateEqualModule } from 'ng-validate-equal';
 
 import { NbLayoutModule ,
     NbCardModule,
@@ -35,7 +36,8 @@ import { SignupComponent } from './signup.component';
     NbToggleModule,
     NbMenuModule,
     NbSidebarModule,
-    HttpClientModule
+    HttpClientModule,
+    ValidateEqualModule
   ],
 })
 export class SignupModule { }

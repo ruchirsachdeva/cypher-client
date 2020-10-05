@@ -6,7 +6,7 @@ import {OrderStatus} from "../../enum/OrderStatus";
 import {UserService} from "../../services/user.service";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Role} from "../../enum/Role";
 
 @Component({
@@ -20,10 +20,13 @@ export class PortifolioComponent implements OnInit, OnDestroy {
     OrderStatus = OrderStatus;
     currentUser: JwtResponse;
     Role = Role;
+    addNew : boolean = false;
+
     constructor(private httpClient: HttpClient,
                 private orderService: OrderService,
                 private userService: UserService,
-                private route: ActivatedRoute
+                private route: ActivatedRoute,
+                private router: Router
     ) {
     }
 
@@ -67,7 +70,20 @@ export class PortifolioComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.querySub.unsubscribe();
+        // this.querySub.unsubscribe();
+    }
+
+    showAddNewForm(){
+        console.log("Visited showAddNewForm()");
+        this.addNew = true;
+    }
+
+    goToProfile(){
+        this.router.navigate(['/profile']);
+    }
+
+    goToOrders(){
+        this.router.navigate(['/order']);
     }
 
 }

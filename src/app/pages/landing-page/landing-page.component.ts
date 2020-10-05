@@ -52,7 +52,7 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {}
   
-  goToLogin(){
+  goToSignup(){
     this.router.navigate(['/register']);
   }
 

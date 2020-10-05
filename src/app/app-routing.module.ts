@@ -49,7 +49,7 @@ const routes: Routes = [
   {
     path: "profile",
     component: UserDetailComponent,
-   // canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: "seller/product/:id/edit",
