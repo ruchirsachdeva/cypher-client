@@ -29,15 +29,18 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "success", component: SignupComponent },
   { path: "survey", component: SurveyComponent },
-  { path: "portifolio", component: PortifolioComponent },
+  { path: "portifolio",
+    component: PortifolioComponent,
+    canActivate : [AuthGuard]
+  },
   {
    path: "order/:id",
    component: OrderDetailComponent,
-    canActivate: [AuthGuard],
+   canActivate: [AuthGuard],
   },
   { path: "order",
     component: OrderComponent,
-     canActivate: [AuthGuard] 
+    canActivate: [AuthGuard] 
   },
   { path: "seller", redirectTo: "seller/product", pathMatch: "full" },
   {
