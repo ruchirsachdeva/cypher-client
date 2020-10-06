@@ -15,9 +15,15 @@ input[type=number] {
 }
 
 .col-md-12{
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .form-control-sm{
-    font-weight: 700;
+    font-weight: 900;
+}
+
+.btn-sm.btn-block{
+    background-color: black;
+    color: white;
+    font-weight: 800;
 }
