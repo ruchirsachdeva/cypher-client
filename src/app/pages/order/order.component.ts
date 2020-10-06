@@ -30,7 +30,7 @@ export class OrderComponent implements OnInit, OnDestroy {
 
     querySub: Subscription;
 
-    ngOnInit() {
+    ngOnInit() { 
     /*    this.currentUser = this.userService.currentUserValue;
         this.querySub = this.route.queryParams.subscribe(() => {
             this.update();
