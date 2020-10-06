@@ -10,7 +10,13 @@
 }
 
 label{
-    font-weight: bolder;
+    font-weight: 900;
+}
+
+.btn-sm.btn-block{
+    background-color: black;
+    color: white;
+    font-weight: 800;
 }
 
 /* Float four columns side by side */
