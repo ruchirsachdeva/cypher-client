@@ -1,16 +1,16 @@
+
 div.footer{
     height: 15%;
     background-color: black; 
-    position: fixed;
     left: 0; 
     bottom: 0;
     width: 100%;  
 }
 
 div.col-2{
-    font-weight: bold;
+    font-weight: 900;
     padding-left:3%;
-    padding-right: 3%;
+    position: relative;
 }
 
 div.header{
@@ -22,41 +22,41 @@ div.row{
 }
 
 .dropbtn {
-    overflow: visible;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
+  overflow: visible;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  padding-left: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
   
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+.dropdown {
+  padding-left: 4%;
+}
   
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-      text-align: left;
-      font-size: medium;
-      overflow: visible;
-      width: 200px;
-      margin-left: 20%;
-    color: dimgray;
-  
-    text-decoration: none;
-    display: block;
-  }
-  
-  
-  .dropdown:hover .dropdown-content {display: block;}
-  
+.dropdown-menu{
+  border: none;
+  padding: 0%;
+}
+
+.dropdown-item{
+  padding-left: 30%;
+  padding-bottom: 0%;
+  padding-top: 0%;
+  font-size: 16px;
+  font-weight: 900;
+  color: gray;
+}
+
+.dropdown-menu>a:focus, .dropdown-menu>a:hover {
+  color: #262626!important;
+  background-color: white!important;
+}
+
+.logo-section {
+  width: 200px;
+  left: 0;
+  height: 80px;
+}
