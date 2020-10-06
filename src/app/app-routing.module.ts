@@ -66,6 +66,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: [Role.Employee] },
   },
+  { path:"**" , 
+    redirectTo:  "/home" 
+  }
 ];
 
 @NgModule({

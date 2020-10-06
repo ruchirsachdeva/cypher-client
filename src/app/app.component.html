@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark sticky-top" style="background-color: white;">
+<nav *ngIf="router.url !== '/home'" class="navbar navbar-expand navbar-dark sticky-top" style="background-color: white;">
   <div class="col-11">
     <a class="navbar-brand" href="#">
         <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
@@ -9,7 +9,7 @@
     <button class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-shopping-bag"></i></button>
   </div>
 </nav>
-<hr align="top" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
+<hr *ngIf="router.url !== '/home'" align="top" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
 
 <div *ngIf="router.url == '/home'" >
   <router-outlet></router-outlet>
@@ -41,9 +41,9 @@
 </div>
 
 
-<div class="footer">
+<div class="footer" *ngIf="router.url !== '/home'">
 
-<footer *ngIf="router.url !== '/home'" class="py-4 text-white">
+<footer class="py-4 text-white">
       
     <div class="col-md-12"  style="padding: 0%;">
 
