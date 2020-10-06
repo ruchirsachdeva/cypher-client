@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router} from '@angular/router';
 
 @Component({
   selector: "app-landing-page-mobile",
@@ -47,7 +48,7 @@ export class LandingPageMobileComponent implements OnInit {
 
   footerText5: string = "Sign up to enter free raffle";
 
-  constructor() {}
+  constructor( private router: Router) {}
 
   ngOnInit() {}
 }
