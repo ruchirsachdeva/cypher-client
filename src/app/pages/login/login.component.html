@@ -16,11 +16,11 @@
           <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
               <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control form-control-sm" name="email" [(ngModel)]="model.email" #email="ngModel" required email />
-                  <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="invalid-feedback">
-                      <div *ngIf="email.errors.required">Email is required</div>
-                      <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                  <label for="username">Email</label>
+                  <input type="text" class="form-control form-control-sm" name="username" [(ngModel)]="model.username" #username="ngModel" required email />
+                  <div *ngIf="username.invalid && (username.dirty ||username.touched)" class="invalid-feedback">
+                      <div *ngIf="username.errors.required">Email is required</div>
+                      <div *ngIf="username.errors.email">Email must be a valid email address</div>
                   </div>
               </div>
 
@@ -29,7 +29,7 @@
                   <input type="password" class="form-control form-control-sm" name="password" [(ngModel)]="model.password" #password="ngModel" required minlength="3" />
                   <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="invalid-feedback">
                     <div *ngIf="password.errors.required">Password is required</div>
-                    <div *ngIf="password.errors.minlength">Please enter atleast 6 characters </div>
+                    <div *ngIf="password.errors.minlength">Please enter atleast 3 characters </div>
                   </div>
               </div>
 
@@ -60,7 +60,7 @@
               </div>
 
               <div class="form-group">
-                <button type="button" [disabled]="!f.form.valid" class="btn-sm btn-block">LOG IN</button>
+                <button type="submit" [disabled]="!f.form.valid" class="btn-sm btn-block">LOG IN</button>
               </div>
           </form>
       </div>
