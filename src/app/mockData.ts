@@ -3,6 +3,7 @@ import {ProductInfo} from './models/productInfo';
 export const products: ProductInfo[] = [
   {
     productId: 'B0001',
+    productCode: 'CODE-B0001',
     productName: 'Core Java',
     productPrice: 30.00,
     productStock: 96,
@@ -15,6 +16,7 @@ export const products: ProductInfo[] = [
   },
   {
     productId: 'B0002',
+    productCode: 'CODE-B0002',
     productName: 'Spring In Action',
     productPrice: 20.00,
     productStock: 195,
@@ -27,6 +29,7 @@ export const products: ProductInfo[] = [
   },
   {
     productId: 'B0001',
+    productCode: 'CODE-B0001',
     productName: 'Core Java',
     productPrice: 30.00,
     productStock: 96,
@@ -39,6 +42,7 @@ export const products: ProductInfo[] = [
   },
   {
     productId: 'B0002',
+    productCode: 'CODE-B0002',
     productName: 'Spring In Action',
     productPrice: 20.00,
     productStock: 195,
@@ -50,6 +54,7 @@ export const products: ProductInfo[] = [
     updateTime: '2018-03-10T15:35:43.000+0000'
   }, {
     productId: 'B0001',
+    productCode: 'CODE-B0002',
     productName: 'Core Java',
     productPrice: 30.00,
     productStock: 96,
@@ -62,6 +67,7 @@ export const products: ProductInfo[] = [
   },
   {
     productId: 'B0002',
+    productCode: 'CODE-B0002',
     productName: 'Spring In Action',
     productPrice: 20.00,
     productStock: 195,
@@ -75,6 +81,7 @@ export const products: ProductInfo[] = [
 
 export const prod: ProductInfo = {
   productId: 'B0002',
+  productCode: 'CODE-B0002',
   productName: 'Spring In Action',
   productPrice: 20.00,
   productStock: 195,

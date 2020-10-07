@@ -21,8 +21,16 @@ export class ProductService {
         return this.http.get(url)
             .pipe(
                 // tap(_ => console.log(_)),
-            )
+            );
     }
+
+  getAllBySellerInPage(page: number, size: number): Observable<any> {
+    const url = `${this.productUrl}/seller?page=${page}&size=${size}`;
+    return this.http.get(url)
+      .pipe(
+        // tap(_ => console.log(_)),
+      );
+  }
 
     getCategoryInPage(categoryType: number, page: number, size: number): Observable<any> {
         const url = `${this.categoryUrl}/${categoryType}?page=${page}&size=${size}`;
@@ -52,8 +60,8 @@ export class ProductService {
     }
 
 
-    delelte(productInfo: ProductInfo): Observable<any> {
-        const url = `${apiUrl}/seller/product/${productInfo.productId}/delete`;
+    delete(productId: string): Observable<any> {
+        const url = `${apiUrl}/seller/product/${productId}/delete`;
         return this.http.delete(url);
     }
 

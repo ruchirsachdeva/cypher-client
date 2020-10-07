@@ -1,4 +1,5 @@
 import {Role} from "../enum/Role";
+import {ProductInfo} from './productInfo';
 
 export class User {
 
@@ -24,6 +25,8 @@ export class User {
 
     password: string;
     confirmPassword : string;
+
+  products: ProductInfo[];
 
     constructor(){
         this.active = true;
