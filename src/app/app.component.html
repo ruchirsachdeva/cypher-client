@@ -1,21 +1,43 @@
-<nav *ngIf="router.url !== '/home'" class="navbar navbar-expand navbar-dark sticky-top" style="background-color: white;">
-  <div class="col-11">
-    <a class="navbar-brand" href="#">
-        <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
-    </a>
-  </div>
-  <div class="col-1"> 
-    <button class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-search"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-shopping-bag"></i></button>
-  </div>
-</nav>
-<hr *ngIf="router.url !== '/home'" align="top" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
-
-<div *ngIf="router.url == '/home'" >
-  <router-outlet></router-outlet>
+<!--Home Page-->
+<div *ngIf="router.url == '/home'">
+   <router-outlet></router-outlet>
 </div>
-<div class="row">
-    <div  class="col-2"  *ngIf="router.url !== '/home'">
+
+<!--Header-->
+  <nav *ngIf="router.url != '/home' && isDesktopDevice" class="navbar navbar-expand sticky-top" style="border-color: white; background-color: white;">
+    <div class="col-11">
+      <a class="navbar-brand" href="#">
+          <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
+      </a>
+    </div>
+    <div class="col-1"> 
+      <button class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-search"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-shopping-bag"></i></button>
+    </div>
+  </nav>
+  <hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
+
+  <nav style="margin: 0%;"  *ngIf="router.url != '/home' && isMobile" class="navbar navbar-expand navbar-dark sticky-top" style="background-color: white;">
+    <div class="col-12" style="padding: 0%;">
+      <button class="openbtn" (click)="openNav()">☰  </button>
+      <a class="navbar-brand">
+        <img class="mob-logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
+      </a>
+      <button class="btn" style="font-size: 20px; margin-left: 20%; padding-top: 0%;"><i class="fa fa-shopping-bag"></i></button>
+    </div>
+    
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+
+<div class="row" >
+    <div  class="col-2" *ngIf="router.url !== '/home' && isDesktopDevice" >
         <a style="padding-left: 25px; color: black;text-decoration: none;">Sell</a><br>
         <a style="padding-left: 25px; color: black;text-decoration: none;" [routerLink]="['/login']">Log In</a><br>
         <div>
@@ -38,32 +60,55 @@
     <div class="col-10" *ngIf="router.url !== '/home'" style="padding-left: 2%; padding-right: 4%;">
         <router-outlet></router-outlet>
     </div>
-</div>
 
-
-<div class="footer" *ngIf="router.url !== '/home'">
-
-<footer class="py-4 text-white">
+    <!--Footer-->
+    <!--Desktop Footer-->
+    <div class="footer" *ngIf="router.url !== '/home' && isDesktopDevice">
+      <footer class="py-4 text-white">
       
-    <div class="col-md-12"  style="padding: 0%;">
-
-        <div style="margin-left: 18%; margin-bottom: 1%; ">
-            SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE.
-        </div>   
-        <div style="margin-left: 18%; margin-bottom: 1%;">
-            <div class="form-inline">
-                <input type="text" style="width: 50%;" placeholder="Email"/>&nbsp;&nbsp;
-                <button type="button" style="font-weight: 550; width:10%; background-color: white; color: black;">SIGN UP</button>
+        <div class="col-md-12"  style="padding: 0%;">
+      
+            <div style="margin-left: 18%; margin-bottom: 1%; ">
+                SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE.
+            </div>   
+            <div style="margin-left: 18%; margin-bottom: 1%;">
+                <div class="form-inline">
+                    <input type="text" style="width: 50%;" placeholder="Email"/>&nbsp;&nbsp;
+                    <button type="button" style="font-weight: 550; width:10%; background-color: white; color: black;">SIGN UP</button>
+                </div>
             </div>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <div>
+                <i style="padding-left: 3%;" class="fa fa-instagram"></i> &nbsp;
+                <i class="fa fa-facebook-official"></i> 
+                <span style="padding-left: 12%;">FAQs | Terms | Privacy | Support | Contact Us</span>
+            </div>
+      
         </div>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <div>
-            <i style="padding-left: 3%;" class="fa fa-instagram"></i> &nbsp;
-            <i class="fa fa-facebook-official"></i> 
-            <span style="padding-left: 12%;">FAQs | Terms | Privacy | Support | Contact Us</span>
-        </div>
-
+        
+      </footer>
     </div>
-    
-  </footer>
+
+    <!--Mobile Footer-->
+    <div class="col-12 mobFooter" *ngIf="router.url !== '/home' && isMobile">
+      <div style="margin-left: 6%; margin-bottom: 1%; margin-top: 2%;">
+        SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE.
+      </div>
+      <div style="margin-left: 6%; margin-bottom: 1%;">
+        <div class="form-inline">
+            <input type="text" style="width: 50%;" placeholder="Email"/>&nbsp;&nbsp;
+            <button type="button" style="font-weight: 550; background-color: white; color: black;">SIGN UP</button>
+        </div>
+      </div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <div>
+        <i style="margin-left: 1%; margin-bottom: 2%;" class="fa fa-instagram"></i> &nbsp;
+        <i class="fa fa-facebook-official"></i> 
+        <span style="padding-left: 1%;">FAQs | Terms | Privacy | Support | Contact Us</span>
+      </div>
+    </div>
+
 </div>
+
+
+
