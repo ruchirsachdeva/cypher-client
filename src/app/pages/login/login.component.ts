@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Role} from "../../enum/Role";
+import { DeviceDetectorService } from 'ngx-device-detector';
 import { User } from '../../models/User';
 
 @Component({
@@ -11,8 +12,14 @@ import { User } from '../../models/User';
 })
 export class LoginComponent implements OnInit {
 
-    isInvalid: boolean;
-    isLogout: boolean;
+  isInvalid: boolean;
+  isLogout: boolean;
+
+  deviceInfo = null;
+  isMobile : boolean= false;
+  isTablet : boolean= false;
+  isDesktopDevice :  boolean= false;
+
     submitted = false;
     model: any = {
         username: '',
@@ -23,8 +30,8 @@ export class LoginComponent implements OnInit {
     returnUrl = '/';
 
     constructor(private userService: UserService,
-                private router: Router,
-                private route: ActivatedRoute) {
+                private router: Router, private deviceService: DeviceDetectorService,
+                private route: ActivatedRoute) { this.checkDevice();
     }
 
     ngOnInit() {
@@ -58,4 +65,11 @@ export class LoginComponent implements OnInit {
         this.model.password = p;
         this.onSubmit();
     }
+
+    checkDevice (){
+        this.deviceInfo = this.deviceService.getDeviceInfo();
+        this.isMobile = this.deviceService.isMobile();
+        this.isTablet = this.deviceService.isTablet();
+        this.isDesktopDevice = this.deviceService.isDesktop();
+      }
 }

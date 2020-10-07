@@ -40,7 +40,8 @@ const routes: Routes = [
   },
   { path: "order",
     component: OrderComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Seller] }
   },
   { path: "seller", redirectTo: "seller/product", pathMatch: "full" },
   {

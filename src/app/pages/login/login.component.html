@@ -1,4 +1,5 @@
-<div class="col-12">
+<div *ngIf="isDesktopDevice">
+ <div class="col-12">
 
   <div class="row">
 
@@ -70,52 +71,82 @@
   <hr style="border: 1px solid">
       <label>or Sign Up with Gmail</label>
 
+ </div>
 </div>
 
-<!--
 
-<h1 align="center" class="display-4 mb-5">Sign In</h1>
-<div style="width:40%; margin: 25px auto">
+<div *ngIf="isMobile">
+    <div class="col-12" style="padding-left: 10%;">
 
-    <div class="alert alert-danger" *ngIf="isInvalid">
-        Invalid username and password.
-    </div>
-    <div class="alert alert-info" *ngIf="isLogout">
-        You have been logged out.
-    </div>
-
-
-    <form #form='ngForm' (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label>Email address</label>
-            <input type="text" class="form-control form-control-lg" id="email" name="email" placeholder="Email"
-                   required autofocus [(ngModel)]="model.username" #email="ngModel" autocomplete="email" >
-            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-                Email is required
+        <div class="row">
+      
+          <div class="col-12"><h6><b>Log In</b></h6></div>
+      
+          <div class="alert alert-danger" *ngIf="isInvalid">
+              Invalid username and password.
+          </div>
+          <div class="alert alert-info" *ngIf="isLogout">
+              You have been logged out.
+          </div>
+      
+            <div class="col-12">
+              <br>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      
+                    <div class="form-group">
+                        <label for="username">Email</label>
+                        <input type="text" class="form-control form-control-sm" name="username" [(ngModel)]="model.username" #username="ngModel" required email />
+                        <div *ngIf="username.invalid && (username.dirty ||username.touched)" class="invalid-feedback">
+                            <div *ngIf="username.errors.required">Email is required</div>
+                            <div *ngIf="username.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+      
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control form-control-sm" name="password" [(ngModel)]="model.password" #password="ngModel" required minlength="3" />
+                        <div *ngIf="password.invalid && (password.dirty ||password.touched)" class="invalid-feedback">
+                          <div *ngIf="password.errors.required">Password is required</div>
+                          <div *ngIf="password.errors.minlength">Please enter atleast 3 characters </div>
+                        </div>
+                    </div>
+      
+                    <div class="form-group">
+                     <!-- <div>
+                          <input type="checkbox" id="remember_me" name="remember-me" [(ngModel)]="model.remembered">
+                          <label for="remember_me" class="inline">Remember me</label>
+                      </div>-->
+                      <br>
+                      <div><label>Forgot Password</label></div>
+                      <div><label>Create Account</label></div>
+      
+                      <strong>Sample Users</strong>
+                      <table style="width: 100%;" id="sampleLoginTable">
+                          <tr>
+                              <td><a
+                                      (click)="fillLoginFields('customer1@email.com','123')"
+                                      href="javascript:void(0)">customer1</a></td>
+                              <td><a
+                                      (click)="fillLoginFields('employee1@email.com','123')"
+                                      href="javascript:void(0)">employee1</a></td>
+                              <td><a
+                                      (click)="fillLoginFields('manager1@email.com','123')"
+                                      href="javascript:void(0)">manager1</a></td>
+                          </tr>
+                      </table>
+      
+                    </div>
+      
+                    <div class="form-group">
+                      <button type="submit" [disabled]="!f.form.valid" class="btn-sm btn-block">LOG IN</button>
+                    </div>
+                </form>
             </div>
+      
         </div>
-
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control form-control-lg" id="password" name="password"  autocomplete="password"
-                   placeholder="Password" required [(ngModel)]="model.password" #password='ngModel'>
-            <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
-                Email is required
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div>
-                <input type="checkbox" id="remember_me" name="remember-me" [(ngModel)]="model.remembered">
-                <label for="remember_me" class="inline">Remember me</label>
-                <a class="float-right" routerLink="/register">Sign Me Up!!</a>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button [disabled]="!form.form.valid" type="submit" class="btn btn-lg btn-primary btn-block">Sign In</button>
-        </div>
-    </form>
-
+      
+        <hr style="border: 1px solid">
+            <label>or Sign Up with Gmail</label>
+      
+       </div>
 </div>
--->
