@@ -71,5 +71,8 @@ export class LoginComponent implements OnInit {
         this.isMobile = this.deviceService.isMobile();
         this.isTablet = this.deviceService.isTablet();
         this.isDesktopDevice = this.deviceService.isDesktop();
-      }
+        console.log("Mobile:",this.isMobile );
+        console.log("Tablet:", this.isTablet);
+        console.log("Desktop:", this.isDesktopDevice);
+    }
 }
