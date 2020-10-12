@@ -9,7 +9,7 @@
     <a  class="nav-link" (click)="goToProfile()">My Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active">Portifolio</a>
+    <a class="nav-link active">Active</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" (click)="goToOrders()">Orders</a>
@@ -19,7 +19,7 @@
 <div *ngIf="!addNew">
   <div class="row">
     <div class="column">
-      <div class="card"><img class="card-img-top" src="..." alt="Card image cap"></div><br>
+      <img class="card-img-top" src="/assets/img/add_icon.png" alt="Card image cap"><br>
 
       <button type="button" (click)="showAddNewForm()" class="btn-sm btn-block">ADD NEW</button>
     </div>
