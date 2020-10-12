@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {OrderService} from "../../services/order.service";
+import {ProductService} from "../../services/product.service";
 import {Order} from "../../models/Order";
 import {OrderStatus} from "../../enum/OrderStatus";
 import {UserService} from "../../services/user.service";
@@ -22,32 +23,38 @@ export class OrderComponent implements OnInit, OnDestroy {
     Role = Role;
     constructor(private httpClient: HttpClient,
                 private orderService: OrderService,
+                private productService : ProductService,
                 private userService: UserService,
                 private route: ActivatedRoute,
                 private router: Router
     ) {
     }
-
-    querySub: Subscription;
+    private querySub: Subscription;
 
     ngOnInit() { 
-    /*    this.currentUser = this.userService.currentUserValue;
+        this.currentUser = this.userService.currentUserValue;
         this.querySub = this.route.queryParams.subscribe(() => {
-            this.update();
-        });*/
+          this.update();
+        });
 
+    }
+
+    ngOnDestroy(): void {
+        this.querySub.unsubscribe();
     }
 
     update() {
         let nextPage = 1;
         let size = 10;
         if (this.route.snapshot.queryParamMap.get('page')) {
-            nextPage = +this.route.snapshot.queryParamMap.get('page');
-            size = +this.route.snapshot.queryParamMap.get('size');
+            const currentPage = +this.route.snapshot.queryParamMap.get('page');
+            const size = +this.route.snapshot.queryParamMap.get('size');
+            this.getOrders(currentPage, size);
+            console.log("Hello");
         }
-        this.orderService.getPage(nextPage, size).subscribe(page => this.page = page, _ => {
-            console.log("Get Orde Failed")
-        });
+        else{
+            this.getOrders();
+        }    
     }
 
 
@@ -67,10 +74,6 @@ export class OrderComponent implements OnInit, OnDestroy {
         })
     }
 
-    ngOnDestroy(): void {
-      //  this.querySub.unsubscribe();
-    }
-
     goToPortifolio(){
         this.router.navigate(['/portifolio']);
     }
@@ -84,4 +87,11 @@ export class OrderComponent implements OnInit, OnDestroy {
         this.router.navigate(['/order/0']);
     }
 
+    getOrders(nextPage : number= 1, size : number= 8){
+        console.log("Get Orders Entered");
+        this.orderService.getPage(+nextPage, +size).subscribe(data => {
+            this.page = data;
+            console.log("Data", this.page);
+        });
+    }
 }
