@@ -15,10 +15,12 @@ import { LandingPageComponent } from "./pages/landing-page/landing-page.componen
 import { Role } from "./enum/Role";
 import { SurveyComponent } from "./pages/survey/survey.component";
 import { PortifolioComponent } from "./pages/portifolio/portifolio.component";
+import { CypherHomeComponent } from "./pages/cypherHome/cypherHome.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: LandingPageComponent },
+  { path: "cypherHome", component: CypherHomeComponent },
   { path: "product/:id", component: DetailComponent },
   { path: "category/:id", component: CardComponent },
   { path: "product", component: CardComponent },
