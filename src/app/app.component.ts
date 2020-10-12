@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
     this.isMobile = this.deviceService.isMobile();
     this.isTablet = this.deviceService.isTablet();
     this.isDesktopDevice = this.deviceService.isDesktop();
-    console.log(this.isMobile);
+    
   }
 
   openNav() {

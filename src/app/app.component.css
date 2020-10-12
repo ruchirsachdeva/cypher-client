@@ -1,24 +1,29 @@
-
-div.footer{
-    height: 15%;
-    background-color: black; 
-    left: 0; 
-    bottom: 0;
-    width: 100%;  
+html{
+  background-image:url(/assets/img/shoe_background.jpg);
 }
 
-div.col-2{
-    font-weight: 900;
-    padding-left:3%;
-    position: relative;
+
+div.footer{
+  height: 15%;
+  background-color: black; 
+  left: 0; 
+  bottom: 0;
+  width: 100%;  
+}
+
+div.leftPane{
+  font-weight: 900;
+  padding-left:3%;
+  position: relative;
+  max-width: 30%;
 }
 
 div.header{
-    margin-left: 2%;
+  margin-left: 2%;
 }
 
 div.row{
-    font-family: Helvetica;
+  font-family: Helvetica;
 }
 
 .dropbtn {
@@ -37,7 +42,8 @@ div.row{
 }
   
 .dropdown-menu{
-  border: none;
+  border: none; 
+  width: 180px;
   padding: 0%;
 }
 

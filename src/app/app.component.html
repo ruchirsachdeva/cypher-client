@@ -4,18 +4,22 @@
 </div>
 
 <!--Header-->
-  <nav *ngIf="router.url != '/home' && isDesktopDevice" class="navbar navbar-expand sticky-top" style="border-color: white; background-color: white;">
-    <div class="col-11">
-      <a class="navbar-brand" href="#">
+<div *ngIf="router.url != '/home' && isDesktopDevice">
+  <nav class="navbar navbar-expand sticky-top" style="background-color: white;">
+    
+    <div class="col-12" style="padding-right: 0%; "  >
+     
+      <a class="navbar-brand" href="#" style="width: 90%; ">
           <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
       </a>
-    </div>
-    <div class="col-1"> 
-      <button class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-search"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-shopping-bag"></i></button>
-    </div>
+      <a class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-search"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-shopping-bag"></i></a>
+      <hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; ">
+    </div> 
+    
   </nav>
-  <hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
+  <!--<hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">-->
+
 
   <nav style="margin: 0%;"  *ngIf="router.url != '/home' && isMobile" class="navbar navbar-expand navbar-dark sticky-top" style="background-color: white;">
     <div class="col-12" style="padding: 0%;">
@@ -37,12 +41,9 @@
 
 
 <div class="row" >
-    <div  class="col-2" *ngIf="router.url !== '/home' && isDesktopDevice" >
+    <div  class="leftPane" *ngIf="router.url !== '/home' && isDesktopDevice" >
         <a style="padding-left: 25px; color: black;text-decoration: none;">Sell</a><br>
-        <a style="padding-left: 25px; color: black;text-decoration: none;" [routerLink]="['/login']">Log In</a><br>
-        <div>
-            <a style="padding-left: 25px; color: black;text-decoration: none;">How it works</a><br>
-        </div>
+        <a style="padding-left: 25px; color: black;text-decoration: none;">How it works</a><br>
         <a style="padding-left: 25px; color: black;text-decoration: none;">Categories</a><br>
         <a style="padding-left: 25px; color: black;text-decoration: none;">Feed</a><br> 
         <div class="dropdown">
@@ -50,16 +51,17 @@
             <div class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" [routerLink]="['/profile']">Profile</a>
               <a class="dropdown-item">Wishlist</a>
-              <a class="dropdown-item" [routerLink]="['/portifolio']">Portifolio</a>
-              <a class="dropdown-item">Seller Dashboard</a>
+              <a class="dropdown-item" [routerLink]="['/portifolio']">Active</a>
               <a class="dropdown-item" [routerLink]="['/order']">Orders</a>
               <a class="dropdown-item" >Settings</a>
             </div>
         </div>
+        <a style="padding-left: 25px; color: black;text-decoration: none;">Seller Dashboard</a><br>
     </div>
-    <div class="col-10" *ngIf="router.url !== '/home'" style="padding-left: 2%; padding-right: 4%;">
+    <div class="content" *ngIf="router.url !== '/home'" style="width: 80%; padding-left: 2%;">
         <router-outlet></router-outlet>
     </div>
+  </div>
 
     <!--Footer-->
     <!--Desktop Footer-->
