@@ -74,4 +74,9 @@ export class DetailComponent implements OnInit {
       this.count = 1;
     }
   }
+
+  goToOrderDetails(){
+    console.log("Sucess");
+  }
+
 }
