@@ -17,6 +17,11 @@ import { SurveyComponent } from "./pages/survey/survey.component";
 import { PortifolioComponent } from "./pages/portifolio/portifolio.component";
 import { CypherHomeComponent } from "./pages/cypherHome/cypherHome.component";
 
+
+import { VerificationComponent } from "./pages/seller-dashboard/verification/verification.component";
+import { ActiveComponent } from "./pages/seller-dashboard/active/active.component";
+import { HistoryComponent } from "./pages/seller-dashboard/history/history.component";
+
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: LandingPageComponent },
@@ -69,6 +74,20 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: [Role.Seller] },
   },
+
+  { path: "verification",
+    component: VerificationComponent,
+    canActivate : [AuthGuard]
+  },
+  { path: "active",
+    component: ActiveComponent,
+    canActivate : [AuthGuard]
+  },
+  { path: "history",
+    component: HistoryComponent,
+    canActivate : [AuthGuard]
+  },
+
   { path:"**" ,
     redirectTo:  "/home"
   }

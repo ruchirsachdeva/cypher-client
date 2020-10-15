@@ -24,8 +24,14 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LoginModule } from './pages/login/login.module';
 import { SignupModule } from './pages/signup/signup.module';
 import { UserDetailModule } from './pages/user-edit/user-detail.module';
-import { OrderModule } from './pages/order/order.module';
 import { PortifolioModule } from './pages/portifolio/portifolio.module';
+
+
+import { VerificationComponent } from './pages/seller-dashboard/verification/verification.component';
+import { ActiveComponent } from './pages/seller-dashboard/active/active.component';
+import { HistoryComponent } from './pages/seller-dashboard/history/history.component';
+import { RouterModule } from '@angular/router';
+import { OrderModule } from './pages/order/order.module';
 
 @NgModule({
     declarations: [
@@ -40,6 +46,10 @@ import { PortifolioModule } from './pages/portifolio/portifolio.module';
         ProductEditComponent,
         LandingPageComponent,
         LandingPageMobileComponent,
+
+        VerificationComponent,
+        ActiveComponent,
+        HistoryComponent
 
     ],
     imports: [
@@ -57,12 +67,12 @@ import { PortifolioModule } from './pages/portifolio/portifolio.module';
         NbThemeModule.forRoot({ name: 'default' }),
         NbMenuModule.forRoot(),
         NbSidebarModule.forRoot(),
-       
+        RouterModule,
         LoginModule,
+        OrderModule,
         SignupModule,
         UserDetailModule,
-        OrderModule,
-        PortifolioModule
+        PortifolioModule,
 
     ],
     providers: [CookieService,
