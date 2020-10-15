@@ -1,0 +1,166 @@
+<div style="padding-bottom: 8%;">
+  <h6><b>Seller Dashboard</b></h6>
+  <br>
+  <h4 style="font-weight: bolder;">SHRAVAN SUD</h4>
+  <hr style="border: 1px solid;">
+
+<ul class="nav">
+  <li class="nav-item">
+    <a  class="nav-link" (click)="goToVerification()">Verification</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="goToHistory()">History</a>
+  </li>
+</ul><br>
+
+<div *ngIf="!addNew">
+  <div class="row">
+    <div class="column">
+      <img class="card-img-top" src="/assets/img/add_icon.png" alt="Card image cap"><br>
+
+      <button type="button" (click)="showAddNewForm()" class="btn-sm btn-block">ADD NEW</button>
+    </div>
+
+</div><br>
+</div>
+
+<!--Add New Product Form-->
+<div class="col-12" *ngIf="addNew">
+
+  <div class="row">
+
+      <div class="col-6" style="padding-bottom: 10%;">
+        <br>
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+              <!-- SKU -->
+              <div class="form-group">
+                <label for="sneakerName">SKU</label>
+                <select placeholder="Start Typing" class="form-control form-control-sm">
+                  <option value="null"></option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+                <div *ngIf="sneakerName.invalid && (sneakerName.dirty ||sneakerName.touched)" class="invalid-feedback">
+                  <div *ngIf="sneakerName.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <!-- Sneaker Name -->
+            <div class="form-group">
+                <label for="lastName">Sneaker Name</label>
+                <input type="text" class="form-control form-control-sm" name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" required />
+                <div *ngIf="lastName.invalid && (lastName.dirty ||lastName.touched)" class="invalid-feedback">
+                  <div *ngIf="lastName.errors.required">Last Name is required</div>
+                </div>
+            </div>
+            <!-- Brand -->
+            <div class="form-group">
+              <label for="address">Brand</label>
+              <input type="text" class="form-control form-control-sm" name="address" [(ngModel)]="user.address" #address="ngModel" required />
+              <div *ngIf="address.invalid && (address.dirty ||address.touched)" class="invalid-feedback">
+                <div *ngIf="address.errors.required">Address is required</div>
+              </div>
+            </div>
+
+            <!-- Colorway -->
+            <div class="form-group">
+              <label for="state">Colorway</label>
+              <input type="text" class="form-control form-control-sm" name="state" [(ngModel)]="user.state" #state="ngModel" required />
+              <div *ngIf="state.invalid && (state.dirty ||state.touched)" class="invalid-feedback">
+                <div *ngIf="state.errors.required">State is required</div>
+              </div>
+            </div>
+
+            <!-- Size (UK) -->
+            <div class="form-group">
+              <label for="zip">Size (UK)</label>
+              <input type="number" class="form-control form-control-sm" name="zip" [(ngModel)]="user.zip" #zip="ngModel" required />
+              <div *ngIf="zip.invalid && (zip.dirty ||zip.touched)" class="invalid-feedback">
+                <div *ngIf="zip.errors.required">Zip Code is required</div>
+              </div>
+            </div>
+
+            <!-- Box Condition -->
+            <div class="form-group">
+              <label for="boxCondition">Box Condition</label>
+                <select placeholder="Start Typing" class="form-control form-control-sm">
+                  <option value="null"></option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              <div *ngIf="country.invalid && (country.dirty ||country.touched)" class="invalid-feedback">
+                <div *ngIf="country.errors.required">Country is required</div>
+              </div>
+            </div>
+
+            <!-- Add Images -->
+            <div class="form-group">
+                <label for="addImages">Add Images</label>
+                // Note: Add image input
+                <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="invalid-feedback">
+                    <div *ngIf="email.errors.required">Email is required</div>
+                    <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+
+            <!--Phone-->
+            <div class="form-group">
+              <label>Price</label><br>
+              <a style="font-weight: 900; font-family: Arial, Helvetica, sans-serif; font-size: medium;">Suggested: Rs. 200038 (only available for sku in our system</a>
+              <select placeholder="Start Typing" class="form-control form-control-sm">
+                <option value="null"></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select><br>
+              <table style="width: 70%; font-weight: 900; font-family: Arial, Helvetica, sans-serif; font-size: medium;" id="sampleLoginTable">
+                <tr>
+                  <td>List Price</td>
+                  <td>Rs. -2.6</td>
+                </tr>
+                <tr>
+                  <td>Tansaction Fee (10%)</td>
+                  <td>Rs. -2.6</td>
+                </tr>
+                <tr>
+                  <td>Service Tax (1.8%)</td>
+                  <td>Rs. -0.47</td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>Rs. 120</td>
+                </tr>
+                <tr>
+                  <td>Authentication Fee</td>
+                  <td>Waived</td>
+                </tr>
+                <tr>
+                  <td>You will recieve</td>
+                  <td>Rs. 0</td>
+                </tr>
+            </table>
+
+              <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)" class="invalid-feedback">
+                <div *ngIf="phone.errors.required">Phone is required</div>
+              </div>
+            </div>
+
+              <div class="form-group">
+                <button type="button" [disabled]="!f.form.valid" style="background-color: black; color: white;" class="btn-sm btn-block">CONFIRM</button>
+              </div>
+          </form>
+      </div>
+
+  </div>
+
+</div>
+
+
