@@ -7,8 +7,9 @@ import {OrderStatus} from "../../enum/OrderStatus";
 import {UserService} from "../../services/user.service";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Subscription} from "rxjs";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {Role} from "../../enum/Role";
+
 
 @Component({
     selector: 'app-cypherHome',
@@ -21,6 +22,9 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
     OrderStatus = OrderStatus;
     currentUser: JwtResponse;
     Role = Role;
+    sortBy;
+    size;
+    brand;
     constructor(private httpClient: HttpClient,
                 private orderService: OrderService,
                 private productService : ProductService,
@@ -36,6 +40,25 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         this.querySub = this.route.queryParams.subscribe(() => {
           this.update();
         }); */
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            console.log(document.body.scrollTop);
+            console.log(document.documentElement.scrollTop);    
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+              document.getElementById("content").style.marginTop= "100px";
+              document.getElementById("background").style.height= "0px";
+              document.getElementById("diff").style.backgroundColor= "white";
+              document.getElementById("hrLine").style.display= "none";
+              
+            } else {
+              document.getElementById("background").style.height= "390px";
+              document.getElementById("content").style.marginTop = "300px";
+              document.getElementById("diff").style.backgroundColor= "unset";
+              document.getElementById("hrLine").style.display= "block";
+            }
+        }
+    
 
     }
 
@@ -74,6 +97,10 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         })
     }
 
+    goToActive(){
+        this.router.navigate(['/active']);
+    }
+
     goToPortifolio(){
         this.router.navigate(['/portifolio']);
     }
@@ -82,9 +109,21 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         this.router.navigate(['/profile']);
     }
 
+    goToOrder(){
+        this.router.navigate(['/order']);
+    }
+
     goToOrderDetails(){
         console.log("Visited goToOrderDetails");
         this.router.navigate(['/order/0']);
+    }
+
+    goToSellerDashboard(){
+        console.log('Route Success');
+    }
+
+    goToSell(){
+        this.router.navigate(['/active']);
     }
 
     getOrders(nextPage : number= 1, size : number= 8){
@@ -95,29 +134,78 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         });
     }
 
+    stopIt(event){
+       event.stopPropagation();
+    }
+
 
     openStealDealsNav() {
       document.getElementById("mySidebar").style.width = "25%";
+     // document.getElementById("header").style.zIndex = "0";
     }
     
     closeStealDealsNav() {
        document.getElementById("mySidebar").style.width = "0";
-       document.getElementById("main").style.marginLeft= "0";
+      // document.getElementById("header").style.zIndex= "1";
     } 
 
     openApparelNav() {
       document.getElementById("mySidebar").style.width = "25%";
-      document.getElementById("main").style.marginLeft = "250px";
+     // document.getElementById("main").style.marginLeft = "250px";
     }
     
     closeApparelNav() {
        document.getElementById("mySidebar").style.width = "0";
-       document.getElementById("main").style.marginLeft= "0";
+      // document.getElementById("main").style.marginLeft= "0";
     }
 
     goToProductInfo(value){
         console.log("Success");
         this.router.navigate(['/product/0'])
+    }
+
+    filterSelection(){
+        console.log('Filter Selected');
+    }
+
+    funcceer(){
+        var dummyEl = document.getElementById('porti');
+        console.log(dummyEl);
+        var isFocused = (document.activeElement === dummyEl);
+        console.log(isFocused);
+    }
+
+    sortByFilter(event){
+        document.getElementById("bestSell").style.color= "gray";
+        document.getElementById("lowPrice").style.color= "gray";
+        document.getElementById("highPrice").style.color= "gray";
+        this.sortBy= event.target.id;
+        console.log('Sort By:',this.sortBy);
+        document.getElementById(this.sortBy).style.color= "white";
+    }
+
+    sizeFilter(event){
+        document.getElementById("UK6").style.color= "gray";
+        document.getElementById("UK7").style.color= "gray";
+        document.getElementById("UK8").style.color= "gray";
+        document.getElementById("UK9").style.color= "gray";
+        document.getElementById("UK10").style.color= "gray";
+        document.getElementById("UK11").style.color= "gray";
+        document.getElementById("UK12").style.color= "gray";
+        this.size= event.target.id;
+        console.log('Size:',this.size);
+        document.getElementById(this.size).style.color= "white";
+    }
+
+    brandFilter(event){
+        document.getElementById("brand1").style.color= "gray";
+        document.getElementById("brand2").style.color= "gray";
+        document.getElementById("brand3").style.color= "gray";
+        document.getElementById("brand4").style.color= "gray";
+        document.getElementById("brand5").style.color= "gray";
+        this.brand=event.target.id;
+        console.log('Size:',this.brand);
+        document.getElementById(this.brand).style.color= "white";
     }
 
 }

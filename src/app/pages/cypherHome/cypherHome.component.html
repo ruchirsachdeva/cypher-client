@@ -1,31 +1,72 @@
-<div style="padding-bottom: 8%;">
+
+<div class="col-12" id="background" style="background-image: url(/assets/img/banner1.jpg); height: 390px; position: fixed;">
+  
+</div>
+
+<nav  class="navbar navbar-expand sticky-top" id="diff" style="z-index: 1; " >
+    
+  <div class="col-12"  style="padding-right: 0%; "  >
+   
+    <a class="navbar-brand" href="#" style="width: 90%; ">
+        <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
+    </a>
+    <a class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-search"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-shopping-bag"></i></a>
+   <hr align="top" id="hrLine" style="border: 1px solid; ">
+  </div> 
+  
+</nav>
+
+<div class="row" id="content"  style="margin-top: 270px;">
+  <div class="col-2" >
+    <a style="padding-left: 25px; color: black;text-decoration: none;" (click)="goToSell()">Sell</a><br>
+    <a style="padding-left: 25px; color: black;text-decoration: none;">How it works</a><br>
+    <a style="padding-left: 25px; color: black;text-decoration: none;">Categories</a><br>
+    <a style="padding-left: 25px; color: black;text-decoration: none;">Feed</a><br> 
+    <div class="dropdown" style="padding-left: 25px;" >
+        <a class="dropbtn" data-toggle="dropdown">Account</a>
+        <div class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="goToProfile()">Profile</a>
+          <a class="dropdown-item" (click)="goToPortifolio()">Portifolio</a>
+          <a class="dropdown-item" (click)="goToOrder()">Orders</a>
+          <a class="dropdown-item" >Settings</a>
+          <a class="dropdown-item" (click)="goToSellerDashboard()">Seller Dashboard</a>
+        </div>
+    </div>
+
+  </div>
+<div class="col-10" style="padding-bottom: 8%;">
 
 <!--Steal Deals-->
 <div class="col-12"> 
-  <a style="color:crimson;" >Steal Deals</a>
+  <a style="color:crimson;">Steal Deals</a>
   <a role="button" style="float: right;" (click)="openStealDealsNav()">Filter</a><br>
   
-  <div id="mySidebar" class="sidebar">
-    <label>Sort By</label>
-    <a role="button">Best Selling</a>
-    <a role="button">Price Low</a>
-    <a role="button">Price High</a><br>
+  <div id="mySidebar" class="sidebar" style="z-index: 2;" >
+    <label>Sort by</label>
+    <a role="button" id="bestSell" (click)="sortByFilter($event)">Best Selling</a>
+    <a role="button" id="lowPrice" (click)="sortByFilter($event)">Price Low</a>
+    <a role="button" id="highPrice" (click)="sortByFilter($event)">Price High</a><br>
     <label>Filters</label>
     <hr align="top" style="border: 1px solid; margin-top:0%; margin-right: 3%; margin-left: 32px;">
     <div class="row">
-      <div class="col-6">
-        <span>Size</span><br>
-        <a role="button">UK XX</a>
-        <a role="button">UK XX</a>
-        <a role="button">UK XX</a>
-        <a role="button">UK XX</a>
-        <a role="button">UK XX</a>
+      <div class="col-6" style="padding-left: 0%;">
+        <label>Size</label>
+        <a role="button" id="UK6" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK7" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK8" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK9" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK10" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK11" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK12" (click)="sizeFilter($event)">UK XX</a>
       </div>
       <div class="col-6">
-        <span>Brand</span>
-        <a role="button">NAME</a>
-        <a role="button">NAME</a>
-        <a role="button">NAME</a>
+        <label>Brand</label>
+        <a role="button" id="brand1" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand2" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand3" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand4" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand5" (click)="brandFilter($event)">NAME</a>
 
       </div>
     </div>
@@ -176,7 +217,7 @@
 
 <!--Apparels-->
 <div class="col-12"> 
-  <a >Apparel</a>
+  <a >Apparels</a>
   <a role="button" style="float: right;" (click)="openApparelNav()">Filter</a><br>
   
   <div id="mySidebar" class="sidebar">
@@ -191,9 +232,12 @@
 
     <button role="button" (click)="closeApparelNav()">Apply Filter </button>
 
-  </div>
+  </div><br>
 
   <!--Image should be placed-->
+
+    <img style="width: 100%;" src="/assets/img/banner2.jpg">
+  <br>
   <br>
 
 <!--Row1-->
@@ -427,3 +471,29 @@
 
 </div>
 
+</div>
+<div class="footer">
+  <footer class="py-4 text-white">
+  
+    <div class="col-md-12"  style="padding: 0%;">
+  
+        <div style="margin-left: 18%; margin-bottom: 1%; ">
+            SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE.
+        </div>   
+        <div style="margin-left: 18%; margin-bottom: 1%;">
+            <div class="form-inline">
+                <input type="text" style="width: 50%;" placeholder="Email"/>&nbsp;&nbsp;
+                <button type="button" style="font-weight: 550; width:10%; background-color: white; color: black;">SIGN UP</button>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div>
+            <i style="padding-left: 3%;" class="fa fa-instagram"></i> &nbsp;
+            <i class="fa fa-facebook-official"></i> 
+            <span style="padding-left: 12%;">FAQs | Terms | Privacy | Support | Contact Us</span>
+        </div>
+  
+    </div>
+    
+  </footer>
+</div>
