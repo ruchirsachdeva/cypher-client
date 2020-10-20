@@ -4,21 +4,25 @@
 </div>
 
 <!--Header-->
-<div *ngIf="router.url != '/home' && router.url!='/cypherHome' && isDesktopDevice" >
+<div *ngIf="router.url != '/home' && router.url!='/cypherHome' && isDesktopDevice" style="max-width: 100%;">
   <nav class="navbar navbar-expand sticky-top" style="background-color: white;">
     
-    <div class="col-12" style="padding-right: 0%; "  >
-     
-      <a class="navbar-brand" href="#" style="width: 90%; ">
+    <div class="col-2">
+
+      <a class="navbar-brand" href="#" style="width: 15%;margin-bottom: 0%;padding-bottom: 0%; ">
           <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
       </a>
-      <a class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-search"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="btn" style="font-size: 20px; padding: 0%;"><i class="fa fa-shopping-bag"></i></a>
-     <!-- <hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; ">-->
-    </div> 
+    </div>
+    <div class="col-10">
+      <button class="btn btn--search btn--3 btn--icon icon-far" style="margin-bottom: 0%;padding-bottom: 0%; float: right; font-size: 20px;background-color: white;border: none; "><i class="fa fa-shopping-bag"></i></button>  
+      <button class="btn btn--search btn--3 btn--icon icon-far" *ngIf="searchBool" style="margin-bottom: 0%;padding-bottom: 0%; float: right; background-color: white; border: none; font-size: 20px;"  (click)="searchBarClose()"><i class="fa fa-close"></i></button>
+      <input id="inputSearch" class="inputSearch" type="text" style="margin-bottom: 0%;padding-bottom: 0%; float: right;">
+      <button class="btn btn--search btn--3 btn--icon icon-far" style="margin-bottom: 0%;padding-bottom: 0%; float: right; font-size: 20px; background-color: white;border: none;" (click)="searchBar()"><i class="fa fa-search"></i></button>
+      <!-- <hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; ">-->
+    </div>
     
   </nav>
-  <hr align="top" *ngIf="router.url != '/home' && router.url!='/cypherHome' && isDesktopDevice" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
+  <hr align="top" *ngIf="router.url != '/home' && router.url!='/cypherHome' && isDesktopDevice" style="border: 1px solid; margin-top:0%; max-width: 100%; margin-left: 4%; margin-right: 3%;">
 
 
   <nav style="margin: 0%;"  *ngIf="router.url != '/home' && isMobile" class="navbar navbar-expand navbar-dark sticky-top" style="background-color: white;">
@@ -40,14 +44,25 @@
   </nav>
 
 
-  <div class="row">
+  <div class="row" style="max-width: 100%;"> 
     <div  class="leftPane" *ngIf="router.url !== '/home' && isDesktopDevice" >
         <a style="padding-left: 25px; color: black;text-decoration: none;" [routerLink]="['/active']">Sell</a><br>
         <a style="padding-left: 25px; color: black;text-decoration: none;">How it works</a><br>
-        <a style="padding-left: 25px; color: black;text-decoration: none;">Categories</a><br>
-        <a style="padding-left: 25px; color: black;text-decoration: none;">Feed</a><br> 
+        <div id="catMenu" class="dropdown">
+          <a role="button"  class="dropbtn" (click)="dropdownClick()" data-toggle="dropdown">Categories</a>
+          <div id="myDropdown" class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" [routerLink]="['/profile']">Sneakers</a>
+            <a class="dropdown-item" [routerLink]="['/profile']">Apparels</a>
+            <a class="dropdown-item" [routerLink]="['/profile']">Accessories</a>
+          </div>
+        </div>
+        <div id="catBreak" style="display: none;">
+          <br><br><br>
+        </div>
+        
+        <a id="unique" style="padding-left: 25px; color: black;text-decoration: none;">Feed</a><br> 
         <div class="dropdown">
-            <a class="dropbtn" data-toggle="dropdown">Account</a>
+            <a class="dropbtn" data-toggle="dropdown" (click)="accountClick()">Account</a>
             <div class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" [routerLink]="['/profile']">Profile</a>
               <a class="dropdown-item" [routerLink]="['/portifolio']">Portifolio</a>
@@ -64,25 +79,41 @@
 
     <!--Footer-->
     <!--Desktop Footer-->
-    <div class="footer" *ngIf="router.url !== '/home' && isDesktopDevice">
+    <div class="footer" *ngIf="router.url !== '/home' && isDesktopDevice" style="max-width: 100%;">
       <footer class="py-4 text-white">
       
-        <div class="col-md-12"  style="padding: 0%;">
-      
-            <div style="margin-left: 18%; margin-bottom: 1%; ">
-                SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE.
-            </div>   
-            <div style="margin-left: 18%; margin-bottom: 1%;">
-                <div class="form-inline">
-                    <input type="text" style="width: 50%;" placeholder="Email"/>&nbsp;&nbsp;
-                    <button type="button" style="font-weight: 550; width:10%; background-color: white; color: black;">SIGN UP</button>
-                </div>
-            </div>
+        <div class="col-12"  style="padding: 0%; ">
+          <!--Line 1-->
+         <div class="row" style="line-height: 90%;">
+          <div class="col-1"></div>
+          <div class="col-2">
+            <span style="font-size: 10pt;margin: 0%;" id="content1">&#169;2020 CYPHER, INC.</span>
+            <span style="padding: 0%; font-size: 10pt;" id="content2">ALL RIGHTS RESERVED</span>
+          </div>
+          <span style="font-size: 19pt;">SIGN UP FOR EARLY ACCESS TO NEWS, PROMOTIONS AND MORE.</span>   
+         </div>
+
+         <!--Line 2-->
+            <div class="row">
+              <div class="col-3"></div>
+                <input type="text" style="background-color: #e4d9d9; width: 55%; " placeholder="Email"/>
+              <div class="col-2">
+                <button type="button" style="width: 100%; background-color: white; color: black;">SIGN UP</button>
+              </div>
+            </div><br>
+
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <div>
-                <i style="padding-left: 3%;" class="fa fa-instagram"></i> &nbsp;
+            <!--Line 3-->
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-2">
+                <i class="fa fa-instagram"></i> &nbsp;
                 <i class="fa fa-facebook-official"></i> 
-                <span style="padding-left: 12%;">FAQs | Terms | Privacy | Support | Contact Us</span>
+              </div> 
+              
+                <span style="font-size: 19pt;"><a>HOW IT WORKS &nbsp;</a>|&nbsp; <a>FAQ &nbsp;</a>|
+                  &nbsp; <a>CONTACT US &nbsp;</a>|&nbsp; <a>PRIVACY &nbsp;</a>|&nbsp; <a>CAREERS</a>
+                </span>
             </div>
       
         </div>

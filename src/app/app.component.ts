@@ -20,9 +20,14 @@ export class AppComponent implements OnInit {
   isMobile : boolean= false;
   isTablet : boolean= false;
   isDesktopDevice :  boolean= false;
+  searchBool: boolean = false;
 
   ngOnInit() {
-     
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        document.getElementById('catBreak').style.display='none';   
+      }
+    } 
   } 
 
   search(){
@@ -50,5 +55,29 @@ export class AppComponent implements OnInit {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
   } 
+
+  searchBar(){
+    this.searchBool= true;
+    document.getElementById("inputSearch").style.width ='85%';
+    document.getElementById("inputSearch").style.border ='thin solid black';
+  }
+
+  searchBarClose(){
+    document.getElementById("inputSearch").style.width ='0%';
+    document.getElementById("inputSearch").style.border ='none';
+    this.searchBool= false;
+  }
+
+  dropdownClick(){
+    if(document.getElementById('catBreak').style.display == 'none')
+      document.getElementById('catBreak').style.display='block';
+    else if(document.getElementById('catBreak').style.display == 'block')
+      document.getElementById('catBreak').style.display='none';
+  }
+
+  accountClick(){
+    if(document.getElementById('catBreak').style.display == 'block')
+      document.getElementById('catBreak').style.display='none';
+  }
 
 }
