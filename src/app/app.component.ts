@@ -23,11 +23,13 @@ export class AppComponent implements OnInit {
   searchBool: boolean = false;
 
   ngOnInit() {
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        document.getElementById('catBreak').style.display='none';   
-      }
-    } 
+    if(this.router.url != '/' && this.router.url != '/home' && this.router.url!='/cypherHome' && this.isDesktopDevice){
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          document.getElementById('catBreak').style.display='none';   
+        }
+      } 
+    }
   } 
 
   search(){

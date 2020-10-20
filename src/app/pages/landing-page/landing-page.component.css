@@ -13,6 +13,10 @@
   height: 100vh;
 }
 
+a:hover{
+ cursor: auto;
+}
+
 .relative {
   position: relative;
 }
@@ -28,6 +32,7 @@
   width: 15em;
   height: auto;
 }
+
 
 .text-section {
   position: absolute;

@@ -50,7 +50,38 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    // Hide and Disable controls Left arrow in First slide & Right arrow in Last slide
+    document.getElementById("prevIcon").style.display='none';
+    document.getElementById("prevAnchor").setAttribute('href',"javascript:void(0);");
+    $("#carousel-landing-page").on('slid.bs.carousel', function(value : any){
+      if(value.from == 3 && value.to== 4){
+       document.getElementById("prevAnchor").setAttribute('href',"#carousel-landing-page");
+       document.getElementById("nextAnchor").setAttribute('href',"javascript:void(0);");
+       document.getElementById("prevIcon").style.display='block';
+       document.getElementById("nextIcon").style.display='none';
+      }
+      else if(value.from == 4 && value.to== 3){
+        document.getElementById("prevAnchor").setAttribute('href',"#carousel-landing-page");
+        document.getElementById("nextAnchor").setAttribute('href',"#carousel-landing-page");
+        document.getElementById("prevIcon").style.display='block';
+        document.getElementById("nextIcon").style.display='block';
+      }
+      else if( value.from == 1 && value.to== 0){
+        document.getElementById("prevAnchor").setAttribute('href',"javascript:void(0);");
+        document.getElementById("nextAnchor").setAttribute('href',"#carousel-landing-page");
+        document.getElementById("prevIcon").style.display='none';
+        document.getElementById("nextIcon").style.display='block';
+      }
+      else {
+        document.getElementById("prevAnchor").setAttribute('href',"#carousel-landing-page");
+        document.getElementById("nextAnchor").setAttribute('href',"#carousel-landing-page");
+        document.getElementById("prevIcon").style.display='block';
+        document.getElementById("nextIcon").style.display='block';
+      }
+    }); 
+  }
   
   goToSignup(){
     this.router.navigate(['/register']);
