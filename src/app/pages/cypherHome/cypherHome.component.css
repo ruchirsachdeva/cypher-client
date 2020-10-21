@@ -7,7 +7,28 @@ label{
     font-weight: bolder;
 }
 
+.inputSearch{
+  padding-top: 1%;
+  width: 0px;
+  background-color: transparent;
+  border: transparent;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
 
+.btn--3:focus {
+  outline: none !important;
+}
+
+.btn--3 {
+  outline: none !important;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  float: right; 
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+}
 
 .logo-section {
   width: 200px;

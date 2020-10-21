@@ -1,4 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common'; 
 import {HttpClient} from "@angular/common/http";
 import {OrderService} from "../../services/order.service";
 import {ProductService} from "../../services/product.service";
@@ -25,6 +26,9 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
     sortBy;
     size;
     brand;
+
+    searchBool:boolean= false;
+
     constructor(private httpClient: HttpClient,
                 private orderService: OrderService,
                 private productService : ProductService,
@@ -45,7 +49,7 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         function scrollFunction() {
             console.log(document.body.scrollTop);
             console.log(document.documentElement.scrollTop);    
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
               document.getElementById("content").style.marginTop= "100px";
               document.getElementById("background").style.height= "0px";
               document.getElementById("diff").style.backgroundColor= "white";
@@ -207,5 +211,19 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         console.log('Size:',this.brand);
         document.getElementById(this.brand).style.color= "white";
     }
+
+    searchBar(){
+        console.log("hello");
+        this.searchBool= true;
+        document.getElementById("inputSearch").style.width ='50%';
+        document.getElementById("inputSearch").style.border ='thin solid black';
+        console.log(this.searchBool);
+      }
+    
+      searchBarClose(){
+        document.getElementById("inputSearch").style.width ='0%';
+        document.getElementById("inputSearch").style.border ='none';
+        this.searchBool= false;
+      }
 
 }

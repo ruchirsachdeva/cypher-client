@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import { CommonModule } from '@angular/common'; 
 import {AppComponent} from './app.component';
 import {NavigationComponent} from './parts/navigation/navigation.component';
 import {CardComponent} from './pages/card/card.component';
@@ -32,6 +32,7 @@ import { ActiveComponent } from './pages/seller-dashboard/active/active.componen
 import { HistoryComponent } from './pages/seller-dashboard/history/history.component';
 import { RouterModule } from '@angular/router';
 import { OrderModule } from './pages/order/order.module';
+import { CypherHomeComponent } from './pages/cypherHome/cypherHome.component';
 
 @NgModule({
     declarations: [
@@ -49,11 +50,13 @@ import { OrderModule } from './pages/order/order.module';
 
         VerificationComponent,
         ActiveComponent,
-        HistoryComponent
+        HistoryComponent,
+        CypherHomeComponent
 
     ],
     imports: [
         BrowserModule,
+        CommonModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,

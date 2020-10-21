@@ -1,23 +1,24 @@
 
-<div class="col-12" id="background" style="background-image: url(/assets/img/banner1.jpg); height: 390px; position: fixed;">
+<div class="col-12" id="background" style="z-index: -1; background-image: url(/assets/img/banner1.jpg); height: 370px; position: fixed;">
   
 </div>
 
 <nav  class="navbar navbar-expand sticky-top" id="diff" style="z-index: 1; " >
-    
-  <div class="col-12"  style="padding-right: 0%; "  >
-   
-    <a class="navbar-brand" href="#" style="width: 90%; margin-bottom: 0%;padding-bottom: 0%;">
-        <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
+  <div class="col-2">
+    <a class="navbar-brand" href="#" style="width: 15%;margin-bottom: 0%;padding-bottom: 0%; ">
+      <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
     </a>
-    <a class="btn" style="font-size: 20px; padding: 0%;margin-bottom: 0%;padding-bottom: 0%;"><i class="fa fa-search"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a class="btn" style="font-size: 20px; padding: 0%; margin-bottom: 0%;padding-bottom: 0%;"><i class="fa fa-shopping-bag"></i></a>
-   <hr align="top" id="hrLine" style="border: 1px solid; padding-top: 0%;margin-top: 0%;">
-  </div> 
-  
+  </div>
+  <div class="col-10">
+    <button class="btn btn--search btn--3 btn--icon icon-far" style="float: right;"><i class="fa fa-shopping-bag"></i></button>  
+    <button *ngIf="searchBool" class="btn btn--search btn--3 btn--icon icon-far" style="float: right;"  (click)="searchBarClose()"><i class="fa fa-close"></i></button>
+    <input id="inputSearch" class="inputSearch" type="text" style="float: right;">
+    <button class="btn btn--search btn--3 btn--icon icon-far" style="float: right;" (click)="searchBar()"><i class="fa fa-search"></i></button>
+  </div>  
 </nav>
+<hr align="top" style="z-index: 3; border: 1px solid; margin-top:0%; max-width: 100%; margin-left: 4%; margin-right: 3%;">
 
-<div class="row" id="content"  style="margin-top: 270px; max-width: 100%;">
+<div class="row" id="content"  style="margin-top: 290px; max-width: 100%;">
   <div class="col-2" >
     <a style="padding-left: 25px; color: black;text-decoration: none;" (click)="goToSell()">Sell</a><br>
     <a style="padding-left: 25px; color: black;text-decoration: none;">How it works</a><br>
