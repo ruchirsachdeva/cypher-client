@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }  from "@angular/router";
+import { NavigationEnd, Router }  from "@angular/router";
 import { event } from 'jquery';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
@@ -50,12 +50,10 @@ export class AppComponent implements OnInit {
 
   openNav() {
     document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
   }
 
   closeNav() {
     document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
   } 
 
   searchBar(){

@@ -6,13 +6,16 @@ html{
   content: "\a";
   padding: 0%;
   margin: 0%;
-  font-size: 10pt;
   white-space: pre;
 }
 
 .btn:focus,.btn:active {
   outline: none !important;
   box-shadow: none;
+}
+
+.navbar{
+  padding: 0 1rem;
 }
 
 .inputSearch{
@@ -28,8 +31,7 @@ html{
   color: #000;
 }
 
-div.footer{
-  height: 215px;
+div.footer{ 
   font-family: helvetica;
   font-weight: 700;
   background-color: black; 
