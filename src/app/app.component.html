@@ -1,4 +1,4 @@
-<div style="overflow-x: hidden;min-height: 100vh;">
+<div style="overflow-x: hidden; max-width: 100%;">
 <!--Home Page-->
 <div *ngIf="router.url=='/home' || router.url=='/cypherHome'">
    <router-outlet></router-outlet>
@@ -72,7 +72,7 @@
             </div>
         </div>
     </div>
-    <div class="content" *ngIf="router.url !== '/home'" style="width: 85%; padding-left: 6%;">
+    <div class="content" *ngIf="router.url !== '/home'" style="width: 80%; padding-left: 6%;">
         <router-outlet></router-outlet>
     </div>
   </div>
