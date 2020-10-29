@@ -3,71 +3,41 @@
 }
 
 .col-12{
-    font-weight: bold;
+  font-weight: bold;
+  font-size: 16px; 
+  font-weight: 700;
 }
 
 .form-control-sm{
-    font-weight: 700;
+  font-weight: 700;
 }
 
 #header{
-    background-color: white;
+  background-color: white;
 }
 
 label{
-    font-weight: bold;
-    font-size: larger;
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input{
+  border-radius: 0%;
+  background-color: gainsboro;
+  color: black;
+}
+
+input:focus{
+  color: black;
+  background-color: gainsboro;
+  outline:0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
 }
 
 .btn-sm.btn-block{
+  border-radius: 0%;
+  border: none;
     background-color: black;
     color: white;
     font-weight: 800;
 }
-
-.logo-section {
-    width: 200px;
-    left: 0;
-    height: 80px;
-    margin-left: 0%;
-    padding-left: 0%;
-  }
-
-  div.col-2{
-    font-size: large;
-    font-weight: 900;
-    position: relative;
-    cursor: pointer;
-  }
-
-  .dropbtn {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: bolder;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-  }
-    
-  .dropdown-menu{
-    float: right;
-    background-color: black;
-    right: 0%;
-    border: none; 
-    width: 25%;
-    padding: 0%;
-  }
-  
-  .dropdown-item{
-    padding-bottom: 0%;
-    padding-top: 0%;
-    font-size: 16px;
-    font-weight: 900;
-    color: gray;
-    cursor: pointer;
-  }
-  a.dropdown-item:hover, a.dropdown-item:hover{
-    color: black;
-    background-color: white;
-  }

@@ -78,8 +78,8 @@ export class OrderComponent implements OnInit, OnDestroy {
         this.router.navigate(['/portifolio']);
     }
 
-    goToProfile(){
-        this.router.navigate(['/profile']);
+    goToBuyerProfile(){
+        this.router.navigate(['/profile/buyer']);
     }
 
     goToOrderDetails(){

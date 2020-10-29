@@ -78,8 +78,8 @@ export class PortifolioComponent implements OnInit, OnDestroy {
         this.addNew = true;
     }
 
-    goToProfile(){
-        this.router.navigate(['/profile']);
+    goToBuyerInfo(){
+        this.router.navigate(['/profile/buyer']);
     }
 
     goToOrders(){

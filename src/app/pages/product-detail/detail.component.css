@@ -14,11 +14,17 @@ button{
     height: 6%;
     background-color: black;
     color: white;
+    border: none;
+    border-radius: 0%;
 }
 
 input{
     height: 6%;
-}
+    background-color: gainsboro;
+    border: none;
+    font-weight: 700;
+    border-radius: 0%;
+  }
 
 h3, h4, h5, h6{
     font-weight: bolder;
@@ -63,7 +69,9 @@ h3, h4, h5, h6{
   .btn-sm.btn-block{
     background-color: black;
     color: white;
-    font-weight: 800;
+    font-weight: 700;
+    border: none;
+    border-radius: 0%;
   }
 
 .carousel-inner .active,

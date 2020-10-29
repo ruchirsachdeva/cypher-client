@@ -33,6 +33,8 @@ import { HistoryComponent } from './pages/seller-dashboard/history/history.compo
 import { RouterModule } from '@angular/router';
 import { OrderModule } from './pages/order/order.module';
 import { CypherHomeComponent } from './pages/cypherHome/cypherHome.component';
+import { SneakersComponent } from './pages/categories/sneakers/sneakers.component';
+import { SellerDetailModule } from './pages/seller-info/seller-detail.module';
 
 @NgModule({
     declarations: [
@@ -51,7 +53,8 @@ import { CypherHomeComponent } from './pages/cypherHome/cypherHome.component';
         VerificationComponent,
         ActiveComponent,
         HistoryComponent,
-        CypherHomeComponent
+        CypherHomeComponent,
+        SneakersComponent
 
     ],
     imports: [
@@ -76,6 +79,7 @@ import { CypherHomeComponent } from './pages/cypherHome/cypherHome.component';
         SignupModule,
         UserDetailModule,
         PortifolioModule,
+        SellerDetailModule
 
     ],
     providers: [CookieService,

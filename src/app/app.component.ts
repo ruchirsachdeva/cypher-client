@@ -21,11 +21,12 @@ export class AppComponent implements OnInit {
   isTablet : boolean= false;
   isDesktopDevice :  boolean= false;
   searchBool: boolean = false;
+  imgSrc= '/assets/add_icon.jpg';
 
   ngOnInit() {
-    if(this.router.url != '/' && this.router.url != '/home' && this.router.url!='/cypherHome' && this.isDesktopDevice){
+    if(this.router.url != '/home' && this.router.url!='/cypherHome' && this.isDesktopDevice){
       window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
+        if(document.getElementById('catBreak').style.display == 'block') {
           document.getElementById('catBreak').style.display='none';   
         }
       } 
@@ -58,7 +59,7 @@ export class AppComponent implements OnInit {
 
   searchBar(){
     this.searchBool= true;
-    document.getElementById("inputSearch").style.width ='85%';
+    document.getElementById("inputSearch").style.width ='80%';
     document.getElementById("inputSearch").style.border ='thin solid black';
   }
 
@@ -78,6 +79,15 @@ export class AppComponent implements OnInit {
   accountClick(){
     if(document.getElementById('catBreak').style.display == 'block')
       document.getElementById('catBreak').style.display='none';
+  }
+
+  openCart() {
+    console.log('Heyy');
+   // document.getElementById("cartMenu").style.width = "25%";
+  }
+  
+  closeCart() {
+   //  document.getElementById("cartMenu").style.width = "0";
   }
 
 }

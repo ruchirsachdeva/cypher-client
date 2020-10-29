@@ -1,23 +1,23 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import {HttpClient} from "@angular/common/http";
-import {OrderService} from "../../services/order.service";
-import {ProductService} from "../../services/product.service";
-import {Order} from "../../models/Order";
-import {OrderStatus} from "../../enum/OrderStatus";
-import {UserService} from "../../services/user.service";
-import {JwtResponse} from "../../response/JwtResponse";
+import {OrderService} from "../../../services/order.service";
+import {ProductService} from "../../../services/product.service";
+import {Order} from "../../../models/Order";
+import {OrderStatus} from "../../../enum/OrderStatus";
+import {UserService} from "../../../services/user.service";
+import {JwtResponse} from "../../../response/JwtResponse";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
-import {Role} from "../../enum/Role";
+import {Role} from "../../../enum/Role";
 
 
 @Component({
-    selector: 'app-cypherHome',
-    templateUrl: './cypherHome.component.html',
-    styleUrls: ['./cypherHome.component.css']
+    selector: 'app-sneakers',
+    templateUrl: './sneakers.component.html',
+    styleUrls: ['./sneakers.component.css']
 })
-export class CypherHomeComponent implements OnInit, OnDestroy {
+export class SneakersComponent implements OnInit, OnDestroy {
 
     page: any;
     OrderStatus = OrderStatus;
@@ -44,27 +44,6 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         this.querySub = this.route.queryParams.subscribe(() => {
           this.update();
         }); */
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            console.log(document.body.scrollTop);
-            console.log(document.documentElement.scrollTop);    
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                console.log("HEyy");
-              document.getElementById("content").style.marginTop= "100px";
-              document.getElementById("background").style.height= "0px";
-              document.getElementById("diff").style.backgroundColor= "white";
-              document.getElementById("hrLine").style.display= "none";
-              
-            } else {
-              document.getElementById("background").style.height= "390px";
-              document.getElementById("content").style.marginTop = "300px";
-              document.getElementById("diff").style.backgroundColor= "unset";
-              document.getElementById("hrLine").style.display= "block";
-            }
-        }
-    
-
     }
 
     ngOnDestroy(): void {

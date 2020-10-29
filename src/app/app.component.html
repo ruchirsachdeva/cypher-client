@@ -1,4 +1,4 @@
-<div style="overflow-x: hidden; max-width: 100%;">
+<div style="max-width: 100%; overflow-x: hidden;">
 <!--Home Page-->
 <div *ngIf="router.url=='/home' || router.url=='/cypherHome'">
    <router-outlet></router-outlet>
@@ -15,14 +15,38 @@
       </a>
     </div>
     <div class="col-10">
-      <button class="btn btn--search btn--3 btn--icon icon-far" style="margin-bottom: 0%;padding-bottom: 0%; float: right; font-size: 20px;background-color: white;border: none; "><i class="fa fa-shopping-bag"></i></button>
+      <button class="btn btn--search btn--3 btn--icon icon-far" (click)="openCart()" style="margin-bottom: 0%;padding-bottom: 0%; float: right; font-size: 20px;background-color: white;border: none; "><i class="fa fa-shopping-bag"></i></button>
+      <div id="cartMenu" class="cartMenu" style="z-index: 2;" >
+        <div class="container">
+          <div class="col-6 mt-3 ml-4" style="font-size: smaller;">
+              Cart 
+          </div>
+          <div class="mt-3 mr-5">
+            <a (click)="closeCart()" style="float: right; color:white; background-color: black; "><i class="fa fa-shopping-bag"></i></a>
+          </div>
+          <div class="row mt-5">
+            <div class="col-4 ml-5" style="padding-left: 0%;">
+              <div class="card img-fluid" style="background-color: black;" >
+                <img src='/assets/img/add_icon.png' class="card-img-top" alt="Card image cap">
+              </div>
+            </div>
+            <div class="col-4 mr-5" style="font-size: 15px; margin: 0%; padding: 0%;">
+              <span>aaaaaaa aaaaa aaaaa aaaaaaaaa aaasdasd adsada</span></div>
+          </div>
+        </div>
+
+      </div>
+      
       <button class="btn btn--search btn--3 btn--icon icon-far" *ngIf="searchBool" style="margin-bottom: 0%;padding-bottom: 0%; float: right; background-color: white; border: none; font-size: 20px;"  (click)="searchBarClose()"><i class="fa fa-close"></i></button>
       <input id="inputSearch" class="inputSearch" type="text" style="margin-bottom: 0%;padding-bottom: 0%; float: right;">
       <button class="btn btn--search btn--3 btn--icon icon-far" style="margin-bottom: 0%;padding-bottom: 0%; float: right; font-size: 20px; background-color: white;border: none;" (click)="searchBar()"><i class="fa fa-search"></i></button>
       <!-- <hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; ">-->
+    
+      
     </div>
     
   </nav>
+  
   <hr align="top" *ngIf="router.url != '/home' && router.url!='/cypherHome' && isDesktopDevice" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
 
  <!--Mobile Header-->
@@ -44,14 +68,20 @@
     </div>
   </nav>
 
+  
+
   <div class="row"> 
     <div  class="leftPane" *ngIf="router.url !== '/home' && isDesktopDevice" >
-        <a style="padding-left: 25px; color: black;text-decoration: none;" [routerLink]="['/active']">Sell</a><br>
-        <a style="padding-left: 25px; color: black;text-decoration: none;">How it works</a><br>
+      <div class="dropdown">
+        <a role="button"  class="dropbtn" [routerLink]="['/active']">Sell</a><br>
+      </div>
+      <div class="dropdown">
+        <a    class="dropbtn" >How it works</a>
+      </div>
         <div id="catMenu" class="dropdown">
           <a role="button"  class="dropbtn" (click)="dropdownClick()" data-toggle="dropdown">Categories</a>
           <div id="myDropdown" class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" [routerLink]="['/profile']">Sneakers</a>
+            <a class="dropdown-item" [routerLink]="['/sneakers']">Sneakers</a>
             <a class="dropdown-item" [routerLink]="['/profile']">Apparels</a>
             <a class="dropdown-item" [routerLink]="['/profile']">Accessories</a>
           </div>
@@ -59,27 +89,28 @@
         <div id="catBreak" style="display: none;">
           <br><br><br>
         </div>
-        
-        <a id="unique" style="padding-left: 25px; color: black;text-decoration: none;">Feed</a><br> 
+        <div class="dropdown">
+          <a role="button" class="dropbtn" >Feed</a>
+        </div>
         <div class="dropdown">
             <a class="dropbtn" data-toggle="dropdown" (click)="accountClick()">Account</a>
             <div class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" [routerLink]="['/profile']">Profile</a>
+              <a class="dropdown-item" [routerLink]="['/profile/seller']">Profile</a>
               <a class="dropdown-item" [routerLink]="['/portifolio']">Portifolio</a>
               <a class="dropdown-item" [routerLink]="['/order']">Orders</a>
-              <a class="dropdown-item">Settings</a>
+              <a class="dropdown-item" [routerLink]="['/settings']">Settings</a>
               <a class="dropdown-item" [routerLink]="['/verification']">Seller Dashboard</a>
             </div>
         </div>
     </div>
-    <div class="content" *ngIf="router.url !== '/home'" style="width: 80%; padding-left: 6%;">
+    <div class="content" *ngIf="router.url !== '/home'" style="width: 83%; min-height: 65vh; padding-left: 6%; z-index: 223;">
         <router-outlet></router-outlet>
     </div>
   </div>
 
     <!--Footer-->
     <!--Desktop Footer-->
-    <div class="footer" *ngIf="router.url !== '/home' && isDesktopDevice">
+    <div class="footer" *ngIf="router.url !== '/home' && isDesktopDevice" style="margin-bottom: 0%;">
       <footer class="py-3 text-white">
       
         <div class="col-12"  style="padding: 0%; ">
@@ -95,9 +126,9 @@
          <!--Line 2-->
           <div class="row" style="padding: 0%;">
             <div class="col-2"></div>
-              <input type="text" style="background-color: #e4d9d9; width: 40%; margin-left: 3%; " placeholder="Email"/>
+              <input type="text" style="background-color: gainsboro;border: none; width: 40%; margin-left: 3%; " placeholder="Email"/>
               <div class="col-2">
-                <button type="button" style="width: 100%; background-color: white; color: black;">SIGN UP</button>
+                <button type="button" style="font-weight: 700; border: none; width: 100%; background-color: white; color: black;">SIGN UP</button>
               </div>
             </div><br>
 

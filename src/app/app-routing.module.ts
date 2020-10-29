@@ -21,11 +21,15 @@ import { CypherHomeComponent } from "./pages/cypherHome/cypherHome.component";
 import { VerificationComponent } from "./pages/seller-dashboard/verification/verification.component";
 import { ActiveComponent } from "./pages/seller-dashboard/active/active.component";
 import { HistoryComponent } from "./pages/seller-dashboard/history/history.component";
+import { SneakersComponent } from "./pages/categories/sneakers/sneakers.component";
+import { SellerDetailComponent } from "./pages/seller-info/seller-detail.component";
+import { SettingsComponent } from "./pages/seller-dashboard/settings/settings.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: LandingPageComponent },
   { path: "cypherHome", component: CypherHomeComponent },
+  { path: "sneakers", component: SneakersComponent },
   { path: "product/:id", component: DetailComponent },
   { path: "category/:id", component: CardComponent },
   { path: "product", component: CardComponent },
@@ -58,8 +62,13 @@ const routes: Routes = [
     data: { roles: [Role.Seller] },
   },
   {
-    path: "profile",
+    path: "profile/buyer",
     component: UserDetailComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "profile/seller",
+    component: SellerDetailComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -85,6 +94,10 @@ const routes: Routes = [
   },
   { path: "history",
     component: HistoryComponent,
+    canActivate : [AuthGuard]
+  },
+  { path: "settings",
+    component: SettingsComponent,
     canActivate : [AuthGuard]
   },
 

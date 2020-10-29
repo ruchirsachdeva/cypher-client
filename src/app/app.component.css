@@ -6,6 +6,23 @@
   white-space: pre;
 }
 
+.container{
+  color:white;
+  font-size: 20px;
+}
+
+.cartMenu {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  right: 0;
+  width: 0;
+  position: fixed;
+  top: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
 .btn:focus,.btn:active {
   outline: none !important;
   box-shadow: none;
@@ -30,7 +47,9 @@
 
 div.footer{ 
   font-family: helvetica;
-  font-weight: 700;
+  font-weight: 599;
+  position: -ms-page;
+  padding-top: 2%;
   background-color: black; 
   left: 0; 
   bottom: 0;
@@ -38,10 +57,10 @@ div.footer{
 }
 
 div.leftPane{
-  font-weight: 900;
+  font-weight: 700;
   padding-left:3%;
   position: relative;
-  max-width: 30%;
+  margin-right: 3%;
 }
 
 div.header{
@@ -53,6 +72,7 @@ div.row{
 }
 
 .dropbtn {
+  display: ruby;
   overflow: visible;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
@@ -60,7 +80,7 @@ div.row{
   font-size: 16px;
   border: none;
   cursor: pointer;
-margin-bottom: 10%;
+  margin-bottom: 10%;
   text-decoration: none;
 }
   
@@ -135,11 +155,6 @@ margin-bottom: 10%;
   background-color: white;
   color: black;
   border: none;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
 }
 
 @media screen and (max-height: 450px) {

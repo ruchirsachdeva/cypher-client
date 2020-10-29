@@ -9,9 +9,28 @@
     color: black;
 }
 
-label{
-    font-weight: 900;
+.col-12{
+  font-size: 16px;
+  font-weight: 700;
 }
+
+.form-control-sm{
+    font-weight: 700;
+}
+
+input{
+    border-radius: 0%;
+    background-color: gainsboro;
+    color: black;
+  }
+  
+  input:focus{
+    color: black;
+    background-color: gainsboro;
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+  }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -28,5 +47,7 @@ input[type=number] {
 .btn-sm.btn-block{
     background-color: black;
     color: white;
-    font-weight: 800;
+    font-weight: 700;
+    border: none;
+    border-radius: 0%;
 }

@@ -6,11 +6,11 @@ import {Observable, Subject} from "rxjs";
 import { Role } from '../../enum/Role';
 
 @Component({
-    selector: 'app-user-detail',
-    templateUrl: './user-detail.component.html',
-    styleUrls: ['./user-detail.component.css']
+    selector: 'app-seller-detail',
+    templateUrl: './seller-detail.component.html',
+    styleUrls: ['./seller-detail.component.css']
 })
-export class UserDetailComponent implements OnInit {
+export class SellerDetailComponent implements OnInit {
 
     constructor(private userService: UserService,
                 private router: Router) {
@@ -46,8 +46,8 @@ export class UserDetailComponent implements OnInit {
         }, _ => {})
     }
 
-    goToSellerInfo(){
-        this.router.navigate(['/profile/seller']);
+    goToBuyer(){
+        this.router.navigate(['/profile/buyer']);
     }
 
 }

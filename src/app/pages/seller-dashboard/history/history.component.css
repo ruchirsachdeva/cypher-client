@@ -1,16 +1,12 @@
 .nav-link{
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     color: #b5b1b0 ;
     cursor: pointer;
 }
 
 .nav-link.active{
     color: black;
-}
-
-label{
-    font-weight: bolder;
 }
 
 /* Float four columns side by side */
@@ -34,6 +30,7 @@ label{
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
     padding: 16px;  
+    border-radius: 0%;
     text-align: center;
     background-color: #f1f1f1;
   }
@@ -55,5 +52,7 @@ label{
   background-color: black;
   color: white;
   padding-left: 0%;
-  font-weight: 800;
+  font-weight: 700;
+  border: none;
+  border-radius: 0%;
 }

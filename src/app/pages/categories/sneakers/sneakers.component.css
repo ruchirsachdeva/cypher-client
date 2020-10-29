@@ -4,25 +4,7 @@
 }
 
 label{
-    font-weight: bolder;
-}
-.carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-}
-
-.carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  color: black;
   font-weight: bolder;
-  background-size: 100%, 100%;
-  border-radius: 50%;
-  background-image: none;
-  filter: invert(1);
 }
 
 
@@ -33,10 +15,6 @@ label{
   border: transparent;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
-}
-
-a{
-  font-weight: lighter;
 }
 
 .btn--3:focus {
@@ -68,6 +46,11 @@ div.col-2{
   cursor: pointer;
 }
 
+
+a {
+ font-weight: lighter;
+}
+
 /* Float four columns side by side */
 .column {
   float: left;
@@ -93,6 +76,7 @@ div.col-2{
     text-align: center;
     background-color: #f1f1f1;
   }
+
 
   .card-img-overlay a{
     float: right;
@@ -121,6 +105,7 @@ div.col-2{
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   width: 0;
+  z-index: 2224;
   position: fixed;
   top: 0;
   right: 0;
@@ -192,7 +177,7 @@ div.col-2{
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
   color: black;
-  font-weight: 700;
+  font-weight: bolder;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -218,17 +203,4 @@ div.col-2{
 a.dropdown-item:hover, a.dropdown-item:hover{
   color: black;
   background-color: white;
-}
-
-.container{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-}
-
-div.footer{
-  height: 15%;
-  background-color: black; 
-  left: 0; 
-  bottom: 0;
-  width: 100%;  
 }

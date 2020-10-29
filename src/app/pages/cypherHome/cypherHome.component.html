@@ -3,7 +3,7 @@
   
 </div>
 
-<nav  class="navbar navbar-expand sticky-top" id="diff" style="z-index: 1; " >
+<nav  class="navbar navbar-expand sticky-top" id="diff" style="z-index: 1;" >
   <div class="col-2">
     <a class="navbar-brand" href="#" style="width: 15%;margin-bottom: 0%;padding-bottom: 0%; ">
       <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
@@ -16,7 +16,7 @@
     <button class="btn btn--search btn--3 btn--icon icon-far" style="float: right;" (click)="searchBar()"><i class="fa fa-search"></i></button>
   </div>  
 </nav>
-<hr align="top" style="z-index: 3; border: 1px solid; margin-top:0%; max-width: 100%; margin-left: 4%; margin-right: 3%;">
+<hr align="top" id="hrLine" style="z-index: 3; border: 1px solid; margin-top:0%; max-width: 100%; margin-left: 4%; margin-right: 3%;">
 
 <div class="row" id="content"  style="margin-top: 290px; max-width: 100%;">
   <div class="col-2" >
@@ -40,7 +40,7 @@
 
 <!--Steal Deals-->
 <div class="col-12"> 
-  <a style="color:crimson;">Steal Deals</a>
+  <a style="color:crimson;font-weight: bold; font-size: 18px;">Steal Deals</a>
   <a role="button" style="float: right;" (click)="openStealDealsNav()">Filter</a><br>
   
   <div id="mySidebar" class="sidebar" style="z-index: 2;" >
@@ -116,7 +116,7 @@
       <div class="card img-fluid"><img class="card-img-top" alt="Card image cap">
         <div class="card-img-overlay"><a role="button">+</a></div>
       </div>
-      <div class="card-body"    >
+      <div class="card-body">
         AIR JORDAN 4 RETRO<br>
         <span style="color: darkgray;">$  Price</span>
       </div>
@@ -211,14 +211,14 @@
   </div>
 </div><!--Row 3 Ends--><br>
 
-<label style="font-weight: 600;">Show more</label>
+<label style="font-weight: lighter;" >Show more</label>
 <hr align="top" style="border: 1px solid; margin-top:0%;">
 <br>
 </div>
 
-<!--Apparels-->
+<!--Apparel-->
 <div class="col-12"> 
-  <a >Apparels</a>
+  <a style="font-size: 18px; font-weight: bolder;">Apparel</a>
   <a role="button" style="float: right;" (click)="openApparelNav()">Filter</a><br>
   
   <div id="mySidebar" class="sidebar">
@@ -387,14 +387,15 @@
 
 <div class="container"> 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <div class=" col-md-1" style="width:2%; float: left;padding-top: 25%;">
-      <a class="carousel-control-prev" style="color: black;font-weight: bolder; font-size: 24px;" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span><
-      </a>
-    </div>
+    
 
-    <div class="carousel-inner col-11">
+    <div class="carousel-inner col-12">
+      <div class=" col-1" style="width:2%; float: left;padding-top: 20%;">
+        <a class="carousel-control-prev" style="color: black;font-weight: bolder; font-size: 24px;" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span><
+        </a>
+      </div>
       <div class="carousel-item col-11 active">
         <div class="row">
             <div class="col-3">
@@ -427,7 +428,7 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item col-11">
+        <div class="carousel-item col-11" style="margin-right: 0%;padding-right: 0%;">
             <div class="row">
               <div class="col-3">
                 <div class="card"><img class="card-img-top"  alt="Card image cap">  </div>
@@ -459,13 +460,18 @@
               </div>
             </div>
         </div>
-        <div class="col-md-1" style="float: right;padding-top: 25%; color: red;"  >
+        <div class="col-1" style="margin-left: 90%; padding-top: 20%; color: red;"  >
           <a class="carousel-control-next" style="color: black;font-weight: bolder; " href="#myCarousel" role="button" data-slide="next">
+            
             <i class="fas fa-greater-than" style="color: black;"></i>
+            <span class="sr-only">Previous</span>
+            
           </a>
         </div>
       </div>
+     
     </div>
+    
 </div>
 
 
