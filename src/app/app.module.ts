@@ -35,7 +35,7 @@ import { OrderModule } from './pages/order/order.module';
 import { CypherHomeComponent } from './pages/cypherHome/cypherHome.component';
 import { SneakersComponent } from './pages/categories/sneakers/sneakers.component';
 import { SellerDetailModule } from './pages/seller-info/seller-detail.module';
-//import { SettingsComponent } from './pages/seller-dashboard/settings/settings.component';
+import { SettingsComponent } from './pages/seller-dashboard/settings/settings.component';
 
 @NgModule({
     declarations: [
@@ -56,7 +56,7 @@ import { SellerDetailModule } from './pages/seller-info/seller-detail.module';
         HistoryComponent,
         CypherHomeComponent,
         SneakersComponent,
-      //  SettingsComponent
+        SettingsComponent
 
     ],
     imports: [
