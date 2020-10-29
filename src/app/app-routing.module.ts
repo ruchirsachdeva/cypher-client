@@ -23,7 +23,7 @@ import { ActiveComponent } from "./pages/seller-dashboard/active/active.componen
 import { HistoryComponent } from "./pages/seller-dashboard/history/history.component";
 import { SneakersComponent } from "./pages/categories/sneakers/sneakers.component";
 import { SellerDetailComponent } from "./pages/seller-info/seller-detail.component";
-import { SettingsComponent } from "./pages/seller-dashboard/settings/settings.component";
+// import { SettingsComponent } from "./pages/seller-dashboard/settings/settings.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -96,10 +96,10 @@ const routes: Routes = [
     component: HistoryComponent,
     canActivate : [AuthGuard]
   },
-  { path: "settings",
+ /* { path: "settings",
     component: SettingsComponent,
     canActivate : [AuthGuard]
-  },
+  },*/
 
   { path:"**" ,
     redirectTo:  "/home"

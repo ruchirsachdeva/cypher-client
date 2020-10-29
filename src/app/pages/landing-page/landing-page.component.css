@@ -21,6 +21,14 @@ a:hover{
   position: relative;
 }
 
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
 .logo-section {
   position: absolute;
   top: 25%;
