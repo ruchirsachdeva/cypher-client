@@ -96,10 +96,10 @@ const routes: Routes = [
     component: HistoryComponent,
     canActivate : [AuthGuard]
   },
-  { path: "settings",
+ /* { path: "settings",
     component: SettingsComponent,
     canActivate : [AuthGuard]
-  },
+  },*/
 
   { path:"**" ,
     redirectTo:  "/home"
