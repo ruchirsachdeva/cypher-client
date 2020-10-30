@@ -1,3 +1,4 @@
+import { StringifyOptions } from "querystring";
 import {Role} from "../enum/Role";
 import {ProductInfo} from './productInfo';
 
@@ -25,6 +26,14 @@ export class User {
 
     password: string;
     confirmPassword : string;
+
+    bankAccName: string;
+
+    bankAccNumber: string;
+
+    ifscCode:string;
+
+    aadharNumber: string;
 
   products: ProductInfo[];
 

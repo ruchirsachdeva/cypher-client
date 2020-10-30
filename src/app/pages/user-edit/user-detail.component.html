@@ -80,16 +80,17 @@
                 <input type="text" class="form-control form-control-sm" name="email" [(ngModel)]="user.email" #email="ngModel" required email />
                 <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="invalid-feedback">
                     <div *ngIf="email.errors.required">Email is required</div>
-                    <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                    <div *ngIf="email.errors.email">Enter a valid Email</div>
                 </div>
             </div>
 
             <!--Phone-->
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="number" class="form-control form-control-sm" name="phone" [(ngModel)]="user.phone" #phone="ngModel" required />
+              <input type="number" class="form-control form-control-sm" name="phone" [(ngModel)]="user.phone" pattern="[0-9 ]{10}" #phone="ngModel" required />
               <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)" class="invalid-feedback">
                 <div *ngIf="phone.errors.required">Phone is required</div>
+                <div *ngIf="phone.errors.pattern">Enter a valid Phone Number</div>
               </div>
             </div>
 

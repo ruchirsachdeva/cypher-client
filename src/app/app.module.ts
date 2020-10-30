@@ -34,6 +34,7 @@ import { OrderModule } from './pages/order/order.module';
 import { CypherHomeComponent } from './pages/cypherHome/cypherHome.component';
 import { SneakersComponent } from './pages/categories/sneakers/sneakers.component';
 import { SellerDetailModule } from './pages/seller-info/seller-detail.module';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 
 @NgModule({
     declarations: [
@@ -52,7 +53,8 @@ import { SellerDetailModule } from './pages/seller-info/seller-detail.module';
         ActiveComponent,
         HistoryComponent,
         CypherHomeComponent,
-        SneakersComponent
+        SneakersComponent,
+        WishlistComponent
 
     ],
     imports: [

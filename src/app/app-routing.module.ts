@@ -22,6 +22,7 @@ import { ActiveComponent } from "./pages/seller-dashboard/active/active.componen
 import { HistoryComponent } from "./pages/seller-dashboard/history/history.component";
 import { SneakersComponent } from "./pages/categories/sneakers/sneakers.component";
 import { SellerDetailComponent } from "./pages/seller-info/seller-detail.component";
+import { WishlistComponent } from "./pages/wishlist/wishlist.component";
 //import { SettingsComponent } from "./pages/seller-dashboard/settings/settings.component";
 
 const routes: Routes = [
@@ -39,6 +40,10 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "success", component: SignupComponent },
   { path: "survey", component: SurveyComponent },
+  { path: "wishlist",
+    component: WishlistComponent,
+    canActivate : [AuthGuard]
+  },
   { path: "portifolio",
     component: PortifolioComponent,
     canActivate : [AuthGuard]
