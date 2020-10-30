@@ -78,10 +78,6 @@ export class ActiveComponent implements OnInit, OnDestroy {
         this.addNew = true;
     }
 
-    goToVerification(){
-        this.router.navigate(['/verification']);
-    }
-
     goToHistory(){
         this.router.navigate(['/history']);
     }

@@ -27,7 +27,6 @@ import { UserDetailModule } from './pages/user-edit/user-detail.module';
 import { PortifolioModule } from './pages/portifolio/portifolio.module';
 
 
-import { VerificationComponent } from './pages/seller-dashboard/verification/verification.component';
 import { ActiveComponent } from './pages/seller-dashboard/active/active.component';
 import { HistoryComponent } from './pages/seller-dashboard/history/history.component';
 import { RouterModule } from '@angular/router';
@@ -50,7 +49,6 @@ import { SellerDetailModule } from './pages/seller-info/seller-detail.module';
         LandingPageComponent,
         LandingPageMobileComponent,
 
-        VerificationComponent,
         ActiveComponent,
         HistoryComponent,
         CypherHomeComponent,

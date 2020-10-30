@@ -1,3 +1,11 @@
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .carousel-indicators li {
   width: 10px;
   height: 10px;

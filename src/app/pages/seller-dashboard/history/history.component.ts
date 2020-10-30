@@ -74,10 +74,6 @@ export class HistoryComponent implements OnInit, OnDestroy {
         })
     }
 
-    goToVerification(){
-        this.router.navigate(['/verification']);
-    }
-
     goToActive(){
         this.router.navigate(['/active']);
     }
