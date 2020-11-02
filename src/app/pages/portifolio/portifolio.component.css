@@ -16,7 +16,9 @@ label{
 .btn-sm.btn-block{
     background-color: black;
     color: white;
-    font-weight: 800;
+    font-weight: 700;
+    border: none;
+    border-radius: 0%;
 }
 
 /* Float four columns side by side */
