@@ -49,18 +49,22 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         function scrollFunction() {
             console.log(document.body.scrollTop);
             console.log(document.documentElement.scrollTop);    
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
                 console.log("HEyy");
-              document.getElementById("content").style.marginTop= "100px";
+              document.getElementById("content").style.marginTop= "200px";
               document.getElementById("background").style.height= "0px";
               document.getElementById("diff").style.backgroundColor= "white";
-              document.getElementById("hrLine").style.display= "none";
+              document.getElementById("blackLogo").style.display= "block";
+              document.getElementById("whiteLogo").style.display= "none";
+            //  document.getElementById("hrLine").style.display= "none";
               
             } else {
               document.getElementById("background").style.height= "390px";
-              document.getElementById("content").style.marginTop = "300px";
+              document.getElementById("content").style.marginTop = "400px";
               document.getElementById("diff").style.backgroundColor= "unset";
-              document.getElementById("hrLine").style.display= "block";
+              document.getElementById("whiteLogo").style.display= "block";
+              document.getElementById("blackLogo").style.display= "none";
+           //   document.getElementById("hrLine").style.display= "block";
             }
         }
     

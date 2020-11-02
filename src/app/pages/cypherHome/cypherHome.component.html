@@ -3,10 +3,11 @@
   
 </div>
 
-<nav  class="navbar navbar-expand sticky-top" id="diff" style="z-index: 1;" >
+<nav  class="navbar navbar-expand sticky-top" id="diff" style="z-index: 1; position: fixed; width: 100%;" >
   <div class="col-2">
     <a class="navbar-brand" href="#" style="width: 15%;margin-bottom: 0%;padding-bottom: 0%; ">
-      <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
+      <img id="blackLogo" style="display: none;" class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
+      <img id="whiteLogo" class="logo-section" src="/assets/img/cypher_logo_white.png" alt="logo" />
     </a>
   </div>
   <div class="col-10">
@@ -18,7 +19,7 @@
 </nav>
 <hr align="top" id="hrLine" style="z-index: 3; border: 1px solid; margin-top:0%; max-width: 100%; margin-left: 4%; margin-right: 3%;">
 
-<div class="row" id="content"  style="margin-top: 290px; max-width: 100%;">
+<div class="row" id="content"  style="margin-top: 400px; max-width: 100%;">
   <div class="col-2" >
     <a style="padding-left: 25px; color: black;text-decoration: none;" (click)="goToSell()">Sell</a><br>
     <a style="padding-left: 25px; color: black;text-decoration: none;">How it works</a><br>
@@ -44,12 +45,21 @@
   <a role="button" style="float: right;" (click)="openStealDealsNav()">Filter</a><br>
   
   <div id="mySidebar" class="sidebar" style="z-index: 2;" >
-    <label>Sort by</label>
-    <a role="button" id="bestSell" (click)="sortByFilter($event)">Best Selling</a>
-    <a role="button" id="lowPrice" (click)="sortByFilter($event)">Price Low</a>
-    <a role="button" id="highPrice" (click)="sortByFilter($event)">Price High</a><br>
-    <label>Filters</label>
-    <hr align="top" style="border: 1px solid; margin-top:0%; margin-right: 3%; margin-left: 32px;">
+    <div class="row">
+      <div class="col-12" style="padding-left: 0%;">
+        <label>Sort by</label><br>
+        <a role="button" id="bestSell" (click)="sortByFilter($event)">Best Selling</a>
+        <a role="button" id="lowPrice" (click)="sortByFilter($event)">Price Low</a>
+        <a role="button" id="highPrice" (click)="sortByFilter($event)">Price High</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="padding-left: 0%;" >
+        <label>Filters</label>
+        <label><hr align="top" style="border: 1px solid white;margin-top: 0%;padding-top: 0%; width: 100%; "></label> 
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-6" style="padding-left: 0%;">
         <label>Size</label>
@@ -68,12 +78,8 @@
         <a role="button" id="brand3" (click)="brandFilter($event)">NAME</a>
         <a role="button" id="brand4" (click)="brandFilter($event)">NAME</a>
         <a role="button" id="brand5" (click)="brandFilter($event)">NAME</a>
-
       </div>
     </div>
-    
-    
-
     <button role="button" (click)="closeStealDealsNav()">Apply Filter </button>
 
   </div>
@@ -222,21 +228,45 @@
   <a role="button" style="float: right;" (click)="openApparelNav()">Filter</a><br>
   
   <div id="mySidebar" class="sidebar">
-    <label>Sort By</label>
-    <a role="button">Best Selling</a>
-    <a role="button">Price Low</a>
-    <a role="button">Price High</a><br>
-    <label>Filters</label>
-    <hr align="top" style="border: 1px solid; margin-top:0%; margin-right: 3%; margin-left: 32px;">
-    <span>Size</span>
-    <span style="margin-left: 30%;">Brand</span><br><br><br>
+    <div class="row">
+      <div class="col-12" style="padding-left: 0%;">
+        <label>Sort by</label><br>
+        <a role="button" id="bestSell" (click)="sortByFilter($event)">Best Selling</a>
+        <a role="button" id="lowPrice" (click)="sortByFilter($event)">Price Low</a>
+        <a role="button" id="highPrice" (click)="sortByFilter($event)">Price High</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="padding-left: 0%;" >
+        <label>Filters</label>
+        <label><hr align="top" style="border: 1px solid white;margin-top: 0%;padding-top: 0%; width: 100%; "></label> 
+      </div>
+    </div>
 
-    <button role="button" (click)="closeApparelNav()">Apply Filter </button>
+    <div class="row">
+      <div class="col-6" style="padding-left: 0%;">
+        <label>Size</label>
+        <a role="button" id="UK6" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK7" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK8" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK9" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK10" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK11" (click)="sizeFilter($event)">UK XX</a>
+        <a role="button" id="UK12" (click)="sizeFilter($event)">UK XX</a>
+      </div>
+      <div class="col-6">
+        <label>Brand</label>
+        <a role="button" id="brand1" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand2" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand3" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand4" (click)="brandFilter($event)">NAME</a>
+        <a role="button" id="brand5" (click)="brandFilter($event)">NAME</a>
+      </div>
 
+      <button role="button" (click)="closeApparelNav()">Apply Filter </button>
+    </div>    
   </div><br>
-
-  <!--Image should be placed-->
-
+  <!--Banner 2-->
     <img style="width: 100%;" src="/assets/img/banner2.jpg">
   <br>
   <br>

@@ -24,7 +24,7 @@
           <div class="mt-3 mr-5">
             <a (click)="closeCart()" style="float: right; color:white; background-color: black; "><i class="fa fa-shopping-bag"></i></a>
           </div>
-          <div class="row mt-5">
+          <!--<div class="row mt-5">
             <div class="col-4 ml-5" style="padding-left: 0%;">
               <div class="card img-fluid" style="background-color: black;" >
                 <img src='/assets/img/add_icon.png' class="card-img-top" alt="Card image cap">
@@ -32,7 +32,7 @@
             </div>
             <div class="col-4 mr-5" style="font-size: 15px; margin: 0%; padding: 0%;">
               <span>aaaaaaa aaaaa aaaaa aaaaaaaaa aaasdasd adsada</span></div>
-          </div>
+          </div>-->
         </div>
 
       </div>
@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <div class="content" *ngIf="router.url !== '/home'" style="width: 83%; min-height: 65vh; padding-left: 6%; z-index: 223;">
+    <div class="col-10" *ngIf="router.url !== '/home'" style="min-height: 72vh; padding-left: 6%; z-index: 223;">
         <router-outlet></router-outlet>
     </div>
   </div>

@@ -53,7 +53,7 @@ div.footer{
   background-color: black; 
   left: 0; 
   bottom: 0;
-  width: 100%;  
+  width: 100%;
 }
 
 div.leftPane{
@@ -80,12 +80,11 @@ div.row{
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-bottom: 10%;
   text-decoration: none;
 }
   
 .dropdown {
-  padding-left: 4%;
+  padding-left: 8%;
 }
   
 .dropdown-menu{

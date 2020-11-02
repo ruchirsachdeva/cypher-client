@@ -3,6 +3,10 @@
   font-weight: 900;
 }
 
+#background{
+  transition: 0.3s;
+}
+
 label{
     font-weight: bolder;
 }
