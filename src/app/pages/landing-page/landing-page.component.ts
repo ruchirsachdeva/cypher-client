@@ -84,7 +84,7 @@ export class LandingPageComponent implements OnInit {
   }
   
   goToSignup(){
-    this.router.navigate(['/register']);
+    // this.router.navigate(['/register']);
   }
 
 }
