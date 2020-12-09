@@ -28,7 +28,7 @@ import { WishlistComponent } from "./pages/wishlist/wishlist.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: LandingPageComponent },
-  { path: "cypherHome", component: CypherHomeComponent },
+  /*{ path: "cypherHome", component: CypherHomeComponent },
   { path: "sneakers", component: SneakersComponent },
   { path: "product/:id", component: DetailComponent },
   { path: "category/:id", component: CardComponent },
@@ -95,7 +95,7 @@ const routes: Routes = [
     component: HistoryComponent,
     canActivate : [AuthGuard]
   },
-  /*{ path: "settings",
+  { path: "settings",
     component: SettingsComponent,
     canActivate : [AuthGuard]
   },*/
