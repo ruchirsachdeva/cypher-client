@@ -1,4 +1,4 @@
-
+<div *ngIf="!isMobile">
 <div class="col-12" id="background" style="z-index: -1; background-image: url(/assets/img/banner1.jpg); height: 370px; position: fixed;">
   
 </div>
@@ -532,4 +532,11 @@
     </div>
     
   </footer>
+</div>
+
+
+</div>
+
+<div *ngIf="isMobile">
+  <app-cypherHome-mobile></app-cypherHome-mobile>
 </div>

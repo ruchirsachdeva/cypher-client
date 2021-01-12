@@ -10,7 +10,7 @@ import {JwtResponse} from "../../response/JwtResponse";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {Role} from "../../enum/Role";
-
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
     selector: 'app-cypherHome',
@@ -27,15 +27,21 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
     size;
     brand;
 
+    deviceInfo;
+    isMobile;
+    isTablet;
+    isDesktopDevice;  
+
     searchBool:boolean= false;
 
     constructor(private httpClient: HttpClient,
                 private orderService: OrderService,
                 private productService : ProductService,
                 private userService: UserService,
+                private deviceService: DeviceDetectorService,
                 private route: ActivatedRoute,
                 private router: Router
-    ) {
+    ) {  this.checkDevice();
     }
     private querySub: Subscription;
 
@@ -223,12 +229,22 @@ export class CypherHomeComponent implements OnInit, OnDestroy {
         document.getElementById("inputSearch").style.width ='50%';
         document.getElementById("inputSearch").style.border ='thin solid black';
         console.log(this.searchBool);
-      }
+    }
     
-      searchBarClose(){
+    searchBarClose(){
         document.getElementById("inputSearch").style.width ='0%';
         document.getElementById("inputSearch").style.border ='none';
         this.searchBool= false;
-      }
+    }
+
+    checkDevice (){
+        this.deviceInfo = this.deviceService.getDeviceInfo();
+        this.isMobile = this.deviceService.isMobile();
+        this.isTablet = this.deviceService.isTablet();
+        this.isDesktopDevice = this.deviceService.isDesktop();
+        console.log("Mobile:",this.isMobile );
+        console.log("Tablet:", this.isTablet);
+        console.log("Desktop:", this.isDesktopDevice);
+    }
 
 }
