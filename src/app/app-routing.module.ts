@@ -28,7 +28,8 @@ import { WishlistComponent } from "./pages/wishlist/wishlist.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: LandingPageComponent },
-  /*{ path: "cypherHome", component: CypherHomeComponent },
+  /*{ path: 'seller-dashboard', loadChildren: () => import(`./pages/seller-dashboard/seller-dashboard.module`).then(m => m.SellerDashboardModule) },
+  { path: "cypherHome", component: CypherHomeComponent },
   { path: "sneakers", component: SneakersComponent },
   { path: "product/:id", component: DetailComponent },
   { path: "category/:id", component: CardComponent },
@@ -86,14 +87,6 @@ const routes: Routes = [
     component: ProductEditComponent,
     canActivate: [AuthGuard],
     data: { roles: [Role.Seller] },
-  },
-  { path: "active",
-    component: ActiveComponent,
-    canActivate : [AuthGuard]
-  },
-  { path: "history",
-    component: HistoryComponent,
-    canActivate : [AuthGuard]
   },
   { path: "settings",
     component: SettingsComponent,

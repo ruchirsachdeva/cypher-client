@@ -26,15 +26,20 @@ import { SignupModule } from './pages/signup/signup.module';
 import { UserDetailModule } from './pages/user-edit/user-detail.module';
 import { PortifolioModule } from './pages/portifolio/portifolio.module';
 
-
-import { ActiveComponent } from './pages/seller-dashboard/active/active.component';
-import { HistoryComponent } from './pages/seller-dashboard/history/history.component';
 import { RouterModule } from '@angular/router';
 import { OrderModule } from './pages/order/order.module';
 import { CypherHomeComponent } from './pages/cypherHome/cypherHome.component';
-import { SneakersComponent } from './pages/categories/sneakers/sneakers.component';
 import { SellerDetailModule } from './pages/seller-info/seller-detail.module';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { CypherHomeMobileComponent } from './pages/cypherHome-mobile/cypherHome-mobile.component';
+import { HeaderComponent } from './parts/header/header.component';
+import { SidenavComponent } from './parts/sidenav/sidenav.component';
+import {MatListModule } from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import { CategoriesModule } from './pages/categories/categories.module';
+import { SellerDashboardModule } from './pages/seller-dashboard/seller-dashboard.module';
+
 
 @NgModule({
     declarations: [
@@ -50,11 +55,11 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
         LandingPageComponent,
         LandingPageMobileComponent,
 
-        ActiveComponent,
-        HistoryComponent,
         CypherHomeComponent,
-        SneakersComponent,
-        WishlistComponent
+        WishlistComponent,
+        CypherHomeMobileComponent,
+        HeaderComponent,
+        SidenavComponent
 
     ],
     imports: [
@@ -79,7 +84,12 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
         SignupModule,
         UserDetailModule,
         PortifolioModule,
-        SellerDetailModule
+        SellerDetailModule,
+        CategoriesModule,
+        SellerDashboardModule,
+        MatListModule,
+        MatSidenavModule,
+        MatIconModule
 
     ],
     providers: [CookieService,
