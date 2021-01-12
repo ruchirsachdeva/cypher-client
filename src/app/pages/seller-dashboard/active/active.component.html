@@ -9,7 +9,7 @@
     <a class="nav-link active">Active</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" (click)="goToHistory()">History</a>
+    <a class="nav-link" [routerLink]="['/seller-dashboard/history']">History</a>
   </li>
   <li class="nav-item">
     <a class="nav-link">Most Wanted</a>
@@ -49,9 +49,7 @@
                   <option>3</option>
                   <option>4</option>
                 </select>
-                <div *ngIf="sneakerName.invalid && (sneakerName.dirty ||sneakerName.touched)" class="invalid-feedback">
-                  <div *ngIf="sneakerName.errors.required">First Name is required</div>
-                </div>
+                
             </div>
             <!-- Sneaker Name -->
             <div class="form-group">
@@ -91,7 +89,7 @@
             <!-- Box Condition -->
             <div class="form-group">
               <label for="boxCondition">Box Condition</label>
-                <select placeholder="Start Typing" class="form-control form-control-sm">
+                <select placeholder="Start Typing" class="form-control form-control-sm" name="boxCondition" [(ngModel)]="user.country" #country="ngModel">
                   <option value="null"></option>
                   <option>1</option>
                   <option>2</option>
@@ -107,23 +105,26 @@
             <div class="form-group">
                 <label for="addImages">Add Images</label>
                 // Note: Add image input
-                <div *ngIf="email.invalid && (email.dirty ||email.touched)" class="invalid-feedback">
+                <!--<div *ngIf="email.invalid && (email.dirty ||email.touched)" class="invalid-feedback">
                     <div *ngIf="email.errors.required">Email is required</div>
                     <div *ngIf="email.errors.email">Email must be a valid email address</div>
-                </div>
+                </div>-->
             </div>
 
             <!--Phone-->
             <div class="form-group">
-              <label>Price</label><br>
+              <label for="phone">Price</label><br>
               <a style="font-weight: 900; font-family: Arial, Helvetica, sans-serif; font-size: medium;">Suggested: Rs. 200038 (only available for sku in our system</a>
-              <select placeholder="Start Typing" class="form-control form-control-sm">
+              <select placeholder="Start Typing" class="form-control form-control-sm" name="phone" [(ngModel)]="user.phone" #phone="ngModel">
                 <option value="null"></option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
               </select><br>
+              <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)" class="invalid-feedback">
+                <div *ngIf="phone.errors.required">Phone is required</div>
+              </div>
               <table style="width: 70%; font-weight: 900; font-family: Arial, Helvetica, sans-serif; font-size: medium;" id="sampleLoginTable">
                 <tr>
                   <td>List Price</td>
@@ -151,9 +152,7 @@
                 </tr>
             </table>
 
-              <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)" class="invalid-feedback">
-                <div *ngIf="phone.errors.required">Phone is required</div>
-              </div>
+              
             </div>
 
               <div class="form-group">

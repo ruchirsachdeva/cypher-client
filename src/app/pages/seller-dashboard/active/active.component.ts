@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, NgModule, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {OrderService} from "../../../services/order.service";
 import {Order} from "../../../models/Order";
@@ -8,6 +8,8 @@ import {JwtResponse} from "../../../response/JwtResponse";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Role} from "../../../enum/Role";
+import { User } from '../../../models/User';
+
 
 @Component({
     selector: 'app-active',
@@ -21,6 +23,7 @@ export class ActiveComponent implements OnInit, OnDestroy {
     currentUser: JwtResponse;
     Role = Role;
     addNew : boolean = false;
+    user= new User();
 
     constructor(private httpClient: HttpClient,
                 private orderService: OrderService,
