@@ -1,0 +1,39 @@
+
+
+
+  .dropbtn {
+    display: ruby;
+    overflow: visible;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-left: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+    
+  .dropdown {
+    padding-left: 8%;
+    font-weight: 700;
+  }
+    
+  .dropdown-menu{
+    border: none; 
+    width: 180px;
+    padding: 0%;
+  }
+  
+  .dropdown-item{
+    padding-left: 30%;
+    padding-bottom: 0%;
+    padding-top: 0%;
+    font-size: 16px;
+    font-weight: 900;
+    color: gray;
+  }
+  
+  .dropdown-menu>a:focus, .dropdown-menu>a:hover {
+    color: #262626!important;
+    background-color: white!important;
+  }

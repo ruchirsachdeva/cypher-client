@@ -1,0 +1,36 @@
+
+
+<div class="dropdown">
+    <a role="button"  class="dropbtn" [routerLink]="['/active']">Sell</a><br>
+  </div>
+    <div class="dropdown">
+      <a role="button"  class="dropbtn" (click)="dropdownClick()" data-toggle="dropdown">Categories</a>
+      <div id="myDropdown" class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" [routerLink]="['/sneakers']">Sneakers</a>
+        <a class="dropdown-item" [routerLink]="['/profile']">Apparels</a>
+        <a class="dropdown-item" [routerLink]="['/profile']">Accessories</a>
+      </div>
+    </div>
+    <div id="catMenu" style="display: none;">
+      <br><br><br>
+    </div>
+    <div class="dropdown">
+      <a role="button" class="dropbtn">Feed</a>
+    </div>
+    <div class="dropdown">
+      <a role="button" class="dropbtn" [routerLink]="['/wishlist']">Wishlist</a>
+    </div>
+    <div class="dropdown">
+        <a class="dropbtn" data-toggle="dropdown" (click)="accountClick()">Account</a>
+        <div class="dropdown-menu" (click)="stopIt($event)" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" [routerLink]="['/profile/seller']">Profile</a>
+          <a class="dropdown-item" [routerLink]="['/portifolio']">Portifolio</a>
+          <a class="dropdown-item" [routerLink]="['/order']">Orders</a>
+          <a class="dropdown-item">Settings</a>
+          <a class="dropdown-item" [routerLink]="['/seller-dashboard']">Seller Dashboard</a>
+        </div>
+    </div>
+
+<ng-template #catMenu>
+    <div>Loading...</div>
+</ng-template>
