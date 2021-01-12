@@ -6,49 +6,18 @@
 
 <!--Header-->
 <div *ngIf="router.url != '/home' && router.url!='/cypherHome' && isDesktopDevice">
-  <nav class="navbar navbar-expand sticky-top" style="background-color: white;">
-    
-    <div class="col-2">
-
-      <a class="navbar-brand" href="#" style="width: 15%;margin-bottom: 0%;padding-bottom: 0%; ">
-          <img class="logo-section" src="/assets/img/cypher_logo_black.png" alt="logo" />
-      </a>
-    </div>
-    <div class="col-10">
-      <button class="btn btn--search btn--3 btn--icon icon-far" (click)="openCart()" style="margin-bottom: 0%;padding-bottom: 0%; float: right; font-size: 20px;background-color: white;border: none; "><i class="fa fa-shopping-bag"></i></button>
-      <div id="cartMenu" class="cartMenu" style="z-index: 2;" >
-        <div class="container">
-          <div class="col-6 mt-3 ml-4" style="font-size: smaller;">
-              Cart 
-          </div>
-          <div class="mt-3 mr-5">
-            <a (click)="closeCart()" style="float: right; color:white; background-color: black; "><i class="fa fa-shopping-bag"></i></a>
-          </div>
-          <!--<div class="row mt-5">
-            <div class="col-4 ml-5" style="padding-left: 0%;">
-              <div class="card img-fluid" style="background-color: black;" >
-                <img src='/assets/img/add_icon.png' class="card-img-top" alt="Card image cap">
-              </div>
-            </div>
-            <div class="col-4 mr-5" style="font-size: 15px; margin: 0%; padding: 0%;">
-              <span>aaaaaaa aaaaa aaaaa aaaaaaaaa aaasdasd adsada</span></div>
-          </div>-->
-        </div>
-
-      </div>
-      
-      <button class="btn btn--search btn--3 btn--icon icon-far" *ngIf="searchBool" style="margin-bottom: 0%;padding-bottom: 0%; float: right; background-color: white; border: none; font-size: 20px;"  (click)="searchBarClose()"><i class="fa fa-close"></i></button>
-      <input id="inputSearch" class="inputSearch" type="text" style="margin-bottom: 0%;padding-bottom: 0%; float: right;">
-      <button class="btn btn--search btn--3 btn--icon icon-far" style="margin-bottom: 0%;padding-bottom: 0%; float: right; font-size: 20px; background-color: white;border: none;" (click)="searchBar()"><i class="fa fa-search"></i></button>
-      <!-- <hr align="top" *ngIf="router.url != '/home' && isDesktopDevice" style="border: 1px solid; ">-->
-    
-      
-    </div>
-    
-  </nav>
+ 
+ <app-header></app-header>
+ <div class="row">
+ <app-sidenav class="col-2"></app-sidenav>
+ <mat-sidenav-container class="col-10" autosize>
   
-  <hr align="top" *ngIf="router.url != '/home' && router.url!='/cypherHome' && isDesktopDevice" style="border: 1px solid; margin-top:0%; margin-left: 4%; margin-right: 3%;">
-
+  
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
  <!--Mobile Header-->
   <nav style="margin: 0%;"  *ngIf="router.url != '/home' && isMobile" class="navbar navbar-expand navbar-dark sticky-top" style="background-color: white;">
     <div class="col-12" style="padding: 0%;">
@@ -70,7 +39,7 @@
 
   
 
-  <div class="row"> 
+  <!--<div class="row">
     <div  class="leftPane" *ngIf="router.url !== '/home' && isDesktopDevice" >
       <div class="dropdown">
         <a role="button"  class="dropbtn" [routerLink]="['/active']">Sell</a><br>
@@ -104,9 +73,9 @@
         </div>
     </div>
     <div class="col-10" *ngIf="router.url !== '/home'" style="min-height: 72vh; padding-left: 8%; z-index: 223;">
-        <router-outlet></router-outlet>
+        
     </div>
-  </div>
+  </div>-->
 
     <!--Footer-->
     <!--Desktop Footer-->

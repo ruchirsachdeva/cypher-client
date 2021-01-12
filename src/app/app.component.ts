@@ -57,11 +57,7 @@ export class AppComponent implements OnInit {
     document.getElementById("mySidebar").style.width = "0";
   } 
 
-  searchBar(){
-    this.searchBool= true;
-    document.getElementById("inputSearch").style.width ='80%';
-    document.getElementById("inputSearch").style.border ='thin solid black';
-  }
+  
 
   searchBarClose(){
     document.getElementById("inputSearch").style.width ='0%';
