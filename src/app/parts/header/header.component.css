@@ -1,0 +1,22 @@
+.nav{
+    position: sticky;
+    top: 50px;
+}
+
+.logo-section {
+    width: 200px;
+    left: 0;
+    height: 80px;
+  }
+
+  .cartMenu {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    right: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
