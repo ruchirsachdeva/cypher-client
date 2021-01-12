@@ -1,9 +1,12 @@
 #myVideo {
-  position: relative!important;
-  display: flex!important;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden !important;  
+  position:absolute;
+    top: 0;
+    width: auto;
+    height: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index:1;
 }
 
 .container{

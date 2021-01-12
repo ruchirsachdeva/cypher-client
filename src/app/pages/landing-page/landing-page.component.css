@@ -1,9 +1,15 @@
 #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  position:fixed; 
+    right: 0; 
+    
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto; 
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .carousel-indicators li {
@@ -131,7 +137,7 @@ h2 {
 .slide-3 h3,
 .slide-5 h3 {
   width: 80%;
-  font-size: 1.3em;
+  font-size: 0.9em;
   font-weight: 600;
   line-height: 1.5em;
 }
@@ -182,6 +188,7 @@ h2 {
 
 .slide-5 h3 {
   width: 90%;
+  font-family: "Nunito", sans-serif;
 }
 
 .slide-5 span {
